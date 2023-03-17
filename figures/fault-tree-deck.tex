@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+
+\tikzset{
+  >=stealth,
+  obj/.style ={
+    rounded rectangle, 
+    node distance=12mm,
+    minimum width =50pt,
+    minimum height =15pt,
+    inner sep=3pt,
+    minimum width=3cm,
+    draw=orange!80!black,
+    fill=orange!50!black!20
+  },
+  methodbase/.style ={
+    rectangle,
+    rounded corners=3pt,
+    node distance=12mm,
+    inner sep=5pt ,
+    draw=green!50!black,
+    fill=green!50!black!20,
+  },
+  faultblock/.style={
+    minimum width=3cm,
+    minimum height=1.0cm,
+    methodbase,
+  },
+  mk/.style= {
+    cylinder, shape border rotate=90, draw,gray,
+    minimum height=3mm,
+    aspect=0.5
+  }
+}
+\begin{document}\small
+  \begin{tikzpicture}
+    \node (reduce) [faultblock] {\parbox{2.5cm}{\centering 现浇桥面板使用寿命缩短}};
+    \node (mk1) [mk, below = 2.5mm of reduce]{};
+    \coordinate (A) at (0,-2.2);
+    \coordinate (B) at (0,-1.4);
+    \coordinate (C) at (0,-3.6);
+    \node (obsolescence) at ([xshift=-2cm]A)[faultblock]{\parbox{2.5cm}{\centering 由于过时引起}};
+    \node (deficiency)   at ([xshift= 2cm]A)[faultblock]{\parbox{2.5cm}{\centering 由于缺陷引起}};
+    \draw(reduce)--(mk1)--(B)--(B-|obsolescence)--(obsolescence)(B)--(B-|deficiency)--(deficiency);
+    \node (mk2) [mk, below = 2.5mm of deficiency]{};
+    \node (hazards) at (0,-4.4) [faultblock] {\parbox{2.5cm}{\centering 自然或人工危害}};
+    \node (operation) [faultblock, right=1cm of hazards] {\parbox{2.5cm}{\centering 生产或经营缺陷}};
+    \node (load) [faultblock, left =1cm of hazards] {\parbox{2.5cm}{\centering 荷载因素诱发}};
+    \draw(deficiency)--(mk2)--(mk2|-C)--(C-|load)--(load)(C)--(hazards)(mk2|-C)--(C-|operation)--(operation);
+  \end{tikzpicture}
+\end{document}

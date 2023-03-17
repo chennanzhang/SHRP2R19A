@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth,line join=round]
+    \draw[->](0,0)--(10,0)node[midway,below=3mm]{使用时间};
+    \draw[->](0,0)--(0,4.2)node[below left]{费用};
+    \draw[line width=5mm,red!50!black] (1,0)--++(0,3.5) node [at start,below,text=black]{$T_0$};
+    \draw[line width=5mm,red!50!black] (3.5,0)--++(0,2.0) ;
+    \draw[line width=5mm,red!50!black] (6,0)--++(0,1.5) ;
+    \draw[line width=5mm,red!50!black] (8.5,0)--++(0,-0.8) node [midway,left,text=black]{$T_\text{f}$};
+    \draw[thin](8.8,-0.4)--++(0:0.5)node[right]{终值};
+    \draw[thin](1.3,2.5)--++(45:0.5)node[right]{设计与施工};
+    \node (A) at (4.8,1.3){维修};
+    \draw[thin](3.8,0.7)--(A.south west);
+    \draw[thin](A.south east)--(5.7,0.7);
+  \end{tikzpicture}
+\end{document}

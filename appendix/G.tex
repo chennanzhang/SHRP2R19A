@@ -1,0 +1,302 @@
+% \chapter{DESIGN PROVISION FOR SLIDING SURFACES USED IN BEARING DEVICES FOR SERVICE LIFE}
+\chapter{支座装置中滑动表面的使用寿命设计规定}
+\label{chp:provison-slide-surface}
+% \section{Introduction}
+\section{简介}
+% This appendix provides a procedure for designing sliding surfaces for service life that is applicable to various bearing devices that allow rotation and use sliding surfaces to allow horizontal movements. A key factor in the process is being able to predict the service life of sliding surfaces, which is based on the following essential parameters:
+本附录提供了适用于各种允许旋转和使用滑动面允许水平运动的支座装置的使用寿命滑动面设计程序。该过程的一个关键因素是能够根据以下基本参数预测滑动表面的使用寿命：
+% \begin{enumerate}
+%   \item Wear rate of the sliding material, which can be obtained through experimental work;
+%   \item Total accumulated movements, which can be approximated from loading demand (traffic and thermal loads) and analysis; and
+%   \item The speed or velocity of movement, which can be determined from analysis depending on movement due to truck load or temperature change.
+% \end{enumerate}
+\begin{enumerate}
+  \item 滑动材料的磨损率，可通过实验获得；
+  \item 总累计移动量，可以从负载需求（交通和热负载）和分析中估算出来；
+  \item 运动的速度或速率，可根据卡车负载或温度变化引起的运动通过分析确定。
+\end{enumerate}
+
+% The target service life of the bridge system is established by the owner. The designer must ensure that the bearing device incorporating a sliding surface can provide a service life exceeding the bridge system. If the service life of the sliding surface is less than the service life of the bridge system, steps must be taken to accommodate replacement of the sliding surface or the entire bearing.
+桥梁系统的目标使用寿命由业主确定。设计者必须确保包含滑动表面的支座装置能够提供超过桥梁系统的使用寿命。 如果滑动面的使用寿命小于桥梁系统的使用寿命，则必须采取措施以适应更换滑动面或整个支座。
+
+% The following sections provide detailed descriptions of the parameters listed and the design steps.
+以下部分提供了所列参数和设计步骤的详细说明。
+
+% \section{ELEMENTS OF DESIGN PROVISIONS}
+\section{设计规定的要素}
+% \subsection{Wear Rate}
+\subsection{磨损率}
+\label{subsec:wear-rate}
+% Tests have shown that plain PTFE will wear over time causing reduction in thickness, which ultimately affects service life. If the right type of sliding material is selected along with the right thickness, there is greater probability of achieving the desired service life.
+测试表明，普通\acrlong*{ptfe}会随着时间的推移而磨损，导致厚度减少，最终影响使用寿命。如果选择正确类型的滑动材料以及正确的厚度，则更有可能实现所需的使用寿命。
+
+% The rate of wear, which can be identified as the anticipated thickness reduction per length traveled, can be used to approximately predict service life. The rate of wear is affected by contact pressure, travel speed, temperature, and lubrication. Considering these factors, the following equation can be used to estimate the wear rate for a sliding surface:
+磨损率可以确定为摩擦行进单位长度所引起的厚度的减少，可用于大致预测使用寿命。 磨损率受接触压力、行进速度、温度和润滑程度的影响。考虑到这些因素，可以使用以下等式来估算滑动表面的磨损率：
+\begin{equation}
+  \label{eq:wear-rate}
+  \text{wear rate}=\text{base wear rate}(\text{material} ,P,V)\times \text{CT} \times \text{CL}
+\end{equation}
+\begin{EqDesc}{\text{base wear rate}}
+  \item [\text{wear rate}] 磨损率，磨损厚度与行程的比值；
+  \item [\text{base wear rate}] 基本磨损率，根据实验测试定义的与材料类型、接触压力和速度相关的函数；
+  \item [\text{CT}] 低温影响的修正因子（材料类型的函数）；
+  \item [\text{CL}] 润滑影响的修正因子（材料类型的函数）；
+  \item [P] 垂直于滑动面作用的接触压力；
+  \item [V] 滑动支座滑动面滑动速度（参见\cref{subsec:estimate-speed-of-slideing}）。
+\end{EqDesc}
+
+% The base wear rate defined in this procedure is the wear rate determined from tests conducted at various combinations of speed and contact pressure at room temperature, without lubrication. Research (Stanton et al. 1999) showed that low temperature and lubrication also contributed to wear rate. Low temperatures increased wear, while lubrication significantly reduced wear. The effects of these parameters can be seen in Table G.1 below. To account for these effects, the factors CT and CL are added to Equation G.19. These factors are a function of material type and must be determined from tests. At this time, there is insufficient data to develop these factors accurately for final service life design, but estimates can be drawn from Table G.1.
+本程序中定义的基本磨损率是根据在室温下以各种速度和接触压力组合进行的测试确定的磨损率，没有进行润滑。研究表明，低温和润滑也会增加磨损率\cite{stanton1999h}。低温会增加磨损，而润滑会显著减少磨损。这些参数的影响可以在下面的\cref{tab:ptfe-wear-rate} 中看到。为说明这些影响，将系数 $\text{CT}$ 和 $\text{CL}$ 添加到\cref{eq:wear-rate} 中。这些因素是材料类型的函数，必须通过测试来确定。目前，没有足够的数据来为最终使用寿命设计准确地开发这些因素，但可以从\cref{tab:ptfe-wear-rate} 中得出估计值。
+
+\begin{table}
+  % \caption{PTFE Wear Rates. (Stanton et al., 1999)}
+  \caption{\acrlong*{ptfe}磨损率}
+  \label{tab:ptfe-wear-rate}
+  \input{tables/ptfe-wear-rate}
+\end{table}
+
+
+% Research performed by \pnme{Campbell} and \pnme{Kong} \yearcite{campbell1987t} on wear of PTFE sliding surfaces, indicated that the value of pressure times velocity, referred to as the PV factor, could be used as a base parameter to predict the corresponding rate of wear. Their research indicated that there was a PV threshold below which there would be a low wear regime, and above which, there would be a high wear regime.
+\pnme{Campbell} 和 \pnme{Kong} \yearcite{campbell1987t} 对\acrlong{ptfe}滑动表面的磨损进行的研究表明，压力乘以速度的值，称为 $PV$ 因子，可以用作基本参数来预测相应的磨损率。 他们的研究表明存在一个 $PV$ 阈值，低于该阈值将出现低磨损状态，高于该阈值将出现高磨损状态。
+
+
+% In a study conducted by SHRP 2 Project R19A, limited proof of concept testing resulted in preliminary development of PV curves for two types of PTFE sliding materials, and an alternate non-PTFE sliding material. These studies confirmed the concept of PV factor affecting wear rate for PTFE based materials, and further confirmed the concept of PV threshold. However, because of the limited amount of data, additional tests need to be carried out to develop final PV vs. wear rate curves that can be reliably used for actual service life design.
+在 \gls*{shrp}2 项目 R19A 进行的一项研究中，开展了一些有限的概念性的试验验证，初步得到了两种\acrlong*{ptfe}滑动材料和替代的非\acrlong*{ptfe}滑动材料的 $PV$ 曲线。 这些研究证实了 $PV$ 因素影响\acrlong*{ptfe}基材料磨损率的概念，并进一步证实了 $PV$ 阈值的概念。 然而，由于数据量有限，还需要进行额外的试验来开发最终的 $PV$ 及可以有效应用于实际\gls*{servicelife}设计的磨损率曲线。
+
+\begin{figure}
+  % \includegraphics[width=\linewidth]{graphic-file}
+  % \caption{Wear rate vs. PV factor for plain PTFE.}
+  \caption{普通\acrlong*{ptfe}磨损率与 $PV$ 因子之间的关系}
+  \label{fig:wear-rate-plain-ptfe}
+\end{figure}
+
+% \cref{fig:wear-rate-plain-ptfe} shows wear rate vs. PV data for plain PTFE sliding surfaces. It combines data from the SHRP 2 R19A study with data from NCHRP Report 432 (Stanton et al. 1999) and shows the relative low wear and high wear regimes. Data shown in red is from NCHRP 432. As stated previously, further testing is required to develop more accurate curves within each of these regions. \cref{fig:wear-rate-glass-reinforced-ptfe} shows a similar curve for glass reinforced PTFE (Fluorogold®) from SHRP 2 R19A rests. Rates of wear for reinforced PTFE are significantly reduced from plain PTFE and could be considered as an alternative for plain PTFE in conditions of high PV.
+\cref{fig:wear-rate-plain-ptfe} 显示了普通 PTFE 滑动表面的磨损率与 $PV$ 数据。 它结合了 \gls*{shrp}2 R19A 研究的数据和 \gls*{nchrp} \bkn*{Report 432} \cite{stanton1999h} 的数据，并显示了相对低磨损和高磨损状态。以红色显示的数据来自 \gls*{nchrp} \bkn*{Report 432}。如前所述，需要进一步测试以在每个区域内开发更准确的曲线。\cref{fig:wear-rate-glass-reinforced-ptfe} 显示了来自 SHRP 2 R19A 试验的玻璃增强\acrlong*{ptfe}（\fluorogold）的类似曲线。 与普通\acrlong*{ptfe}相比，增强\acrlong*{ptfe}的磨损率显著降低，可被视为高 $PV$ 条件下普通\acrlong*{ptfe}的替代品。
+
+\begin{figure}
+  % \includegraphics[width=\linewidth]{graphic-file}
+  % \caption{Wear rate vs. PV factor for glass reinforced PTFE.}
+  \caption{玻璃纤维增强\acrlong*{ptfe}磨损率与 $PV$ 因子之间的关系}
+  \label{fig:wear-rate-glass-reinforced-ptfe}
+\end{figure}
+
+% \cref{tab:ptfe-wear-rate} presents wear data from \acrshort{nchrp} Report 432 \cite{stanton1999h} and shows wear rates for various PTFE based materials at constant pressure, but with variations in sliding speed, temperature and lubrication. This data can be helpful in providing input for parameters in Equation G.19, but as mentioned, further testing is required to establish final values.
+\cref{tab:ptfe-wear-rate} 提供来自 \gls*{nchrp} \bkn*{Report 432} \cite{stanton1999h} 的磨损数据，并显示各种\acrlong{ptfe}基材料在恒定压力下的磨损率，但滑动速度、温度和润滑会发生变化。该数据有助于为\cref{eq:wear-rate}中的参数提供输入，但如前所述，需要进一步测试以确定最终值。
+
+% \subsection{Estimating Total Accumulated Movements}
+\subsection{总累计运动的估计}
+\label{subsec:estimate-total-movements}
+% The total travel demand is the total accumulated distance that the sliding surface will be traveling throughout the service life of the bridge system. This total travel demand can be estimated using
+总行程需求是滑动面在整个桥梁系统使用寿命期间将行驶的总累计距离。 可以使用以下方法估算总出行需求：
+% \begin{enumerate*}
+%   \item specified bridge system service life, 
+%   \item traffic and thermal loading demands, and 
+%   \item calculating horizontal movements, related to applied traffic and thermal loadings.
+% \end{enumerate*}
+\begin{enumerate*}[a)]
+  \item 规定的桥梁系统使用寿命，
+  \item 交通和温度作用需求，以及
+  \item 计算与交通和温度作用相应的水平运动。
+\end{enumerate*}
+
+% Sliding surfaces are means to accommodate horizontal movements associated with traffic load and daily and seasonal bridge superstructure expansion and contraction. The total bridge movement at the bearing, $(\text{TD})_\text{Demand}$, in miles, is produced by the following three mechanisms
+交通荷载、日温度变化和季节性温度变化会引起的桥梁上部结构发生水平伸缩运动，采用滑动表面是适应这水平运动主要手段。支座处的总桥梁移动 $(\text{TD})_\text{Demand}$（以 \unit{km} 为单位）由以下三种机制产生：
+% \begin{enumerate}[a]
+%   \item Traffic-induced horizontal movement, $(\text{TD})_\text{Tr}$ The total accumulated travel with this type of movement can be considerably greater than that associated with b and c.
+%   \item Daily temperature-induced horizontal movement, $(\text{TD})_\text{DT}$.
+%   \item Seasonal temperature-induced horizontal movement, $(\text{TD})_\text{ST}$.
+% \end{enumerate}
+\begin{enumerate}[a.]
+  \item 车辆交通引起的水平运动 $(\text{TD})_\text{Tr}$。此类运动的总累积行程可能比与 b 和 c 相关联的行程大得多。
+  \item 日温度变化引起的水平运动 $(\text{TD})_\text{DT}$。
+  \item 季节性温度变化引起的水平运动 $(\text{TD})_\text{ST}$。
+\end{enumerate}
+
+% The total movement due to temperature is the combination of daily and seasonal movements.
+由温度引起的总运动是日温度变化和季节性温度变化引起运动的组合。
+
+% \subsubsection{Traffic-Induced Horizontal Movement, (TD)Tr}
+\subsubsection{车辆交通引起的水平运动 $(\text{TD})_\text{Tr}$}
+% \cref{eq:traffic-horizontal-movement} estimates total horizontal movement of the sliding surface, in miles due to traffic movement, for the designed service life, $(\mathrm{SL})_\text{B}$ in years.
+\cref{eq:traffic-horizontal-movement} 估计车辆交通引起滑动表面的总水平运动，以 \unit{km} 为单位，对于设计的使用寿命 $(\text{SL})_\text{B}$ 以年为单位。
+\begin{equation}
+  \label{eq:traffic-horizontal-movement}
+  (\text{TD})_\text{Tr} = 2 \times A \times \theta \times D_1 \times n \times 1.33 \times (\text{ADTT})_\text{SL} \times (\text{SL})_\text{B} \times \num{365e-9}
+\end{equation}
+\begin{EqDesc}{(\text{ADTT})_\text{SL}}
+  \item [(\text{TD})_\text{Tr}]车辆交通引起的水平运动（\unit{km}）。
+  \item [A] 当梁的两端均可以在水平方向上自由运动时，取 1，如果一端约束水平运动，另一端可以自由运动，取 2。
+  \item [(\text{ADTT})_\text{SL}] 单车道\acrfull*{adtt}。
+  \item [\theta] 滑动支座的梁端转角（\unit{rad}）。
+  \item [D_1] 梁端截面从底板到中性轴的距离（\unit{mm}）。
+  \item [(\text{SL})_\text{B}] 设计\gls*{servicelife}（年）；
+  \item [1.33] 卡车冲击系数；
+  \item [n] 每次卡车通过引起的等效全振幅水平自由振动运动循环数，最初在此程序中取为 1.0。
+\end{EqDesc}
+
+% In \cref{eq:traffic-horizontal-movement}, $A$ is a parameter that accounts for boundary conditions at both ends of the span. The term $\theta \times D_1$ is the horizontal movement due to girder end rotation. The factor 2 accounts for the full cycle of movement, which includes deflection and rebound.
+在\cref{eq:traffic-horizontal-movement} 中，$A$ 是考虑跨度两端边界条件的参数。 $\theta \times D_1$ 项是由于梁端旋转引起的水平移动。因子 2 计入了整个运动周期，包括变形和反弹。
+
+% When a truck passes over a span, the girders deflect to a maximum amount as the truck approaches mid span, and then recover as the truck moves toward the end of the span. However, because of dynamic behavior, the girders may continue to vibrate until the girder deflection is damped out. The cycles produced after truck passage have successively smaller amplitudes and the decay is dependent on the damping ratios. This characteristic is represented by the term 𝑛, which is the equivalent number of cycles with full amplitude that corresponds to the total number of cycles with decreasingly smaller amplitude. For the purposes of this procedure, however, this term can be neglected (using $n = 1$). Although it is recognized that this behavior occurs, its true magnitude as it applies to bearing movement requires further study along with field verification.
+车辆过桥时，卡车接近跨中时，梁会变形到最大值，然后随着卡车移向支点而恢复。然而，由于动力效应，大梁可能会继续振动，直到梁挠度由于阻尼作用衰减为零为止。 卡车通过后产生的循环具有连续较小的振幅，衰减取决于阻尼比。此特性由 $n$ 这一项来表示，它是对应具有递减的较小振幅的周期总数的全振幅的等效周期数。但是，出于此过程的分析目的，可以忽略这一项（使用 $n = 1$）。虽然认识到会发生这种现象，但其应用于支座运动的真实幅度需要进一步研究和现场验证。
+
+% In the equation, $(\text{ADTT})$ is the average daily tuck traffic and $(\text{SL})_\text{B}$ is the owner specified service life of the bridge system. The constant terms in EQ G.20 are conversion factors.
+在\cref{eq:traffic-horizontal-movement} 中，$(\text{ADTT})$ 是\acrlong*{adtt}，$(\text{SL})_\text{B}$ 是桥梁\gls*{system}业主指定的使用寿命， 常数项是转换因子。
+
+% \subsubsection{Daily Temperature-Induced Horizontal Movement, (TD)DT}
+\subsubsection{日温度变化引起的水平运动 $(\text{TD})_\text{DT}$}
+% \cref{eq:daily-horizontal-movement} estimates total horizontal movement of the sliding surface, in miles, due to daily temperature fluctuation over the designed service life of the bridge, (SL)B in years.
+\cref{eq:daily-horizontal-movement} 估计由于桥梁设计\gls*{servicelife}期间的每日温差变化引起的滑动面的总水平运动，以 \unit{km} 为单位，$(\text{SL})_\text{B}$ 以年为单位。
+\begin{equation}
+  \label{eq:daily-horizontal-movement}
+  (\text{TD})_\text{DT} = 2 \alpha L \Delta T_{Daily} \times (\text{SL})_\text{B} \times \num{365e-3}
+\end{equation}
+\begin{EqDesc}{\Delta T_{Daily}}
+  \item[\Delta T_{Daily}] 日最大温差；
+  \item[\alpha] 热膨胀系数；
+  \item[L] 最大径长度或在多跨度的情况下对水平运动有贡献的长度（\unit{m}）。
+\end{EqDesc}
+
+
+% \subsubsection{Seasonal Temperature-Induced Horizontal Movement, (TD)ST}
+\subsubsection{季节性温度变化引起的水平运动 $(\text{TD})_\text{ST}$}
+% \cref{eq:seasonal-horizontal-movement} estimates total horizontal movement of the sliding surface, in miles, due to yearly temperature fluctuation over the designed service life, (SL)B in years.
+\cref{eq:seasonal-horizontal-movement} 估计由于桥梁设计\gls*{servicelife}期间的季节性温差变化引起的滑动面的总水平运动，以 \unit{km} 为单位，$(\text{SL})_\text{B}$ 以年为单位。
+\begin{equation}
+  \label{eq:seasonal-horizontal-movement}
+  (\text{TD})_\text{ST} = 2 \alpha L \Delta T_{Annual} \times (\text{SL})_\text{B} \times 10^{-3}
+\end{equation}
+\begin{EqDesc}{\Delta T_{Annual}}
+  \item[\Delta T_{Annual}] 年最大温差。
+\end{EqDesc}
+
+
+% \subsubsection{Total Induced Horizontal Movement, (TD)Demand}
+\subsubsection{总水平运动需求 $(\text{TD})_\text{Demand}$}
+\begin{equation}
+  \label{eq:total-induced-horizontal-movement}
+  (\text{TD})_\text{Demand} = (\text{TD})_\text{Tr} + (\text{TD})_\text{DT} +(\text{TD})_\text{ST}
+\end{equation}
+
+% \subsection{Estimating Speed of Sliding Surface Movement}
+\subsection{滑动表面运动的速度估计}
+\label{subsec:estimate-speed-of-slideing}
+% The service life calculation, as described previously, involves the use of PV curves that are specific for the material used for the sliding surface. The term V is the speed at which the sliding surface moves, which depends on whether the movement is caused by truck load or temperature load. This section provides a procedure for calculating the term V in the PV expression.
+如前所述，使用寿命计算涉及使用特定于滑动表面材料的 $PV$ 曲线。$V$ 这一项是滑动表面移动的速度，这取决于移动是由车辆作用还是温度作用引起的。本节提供计算 $PV$ 表达式中的 $V$ 项的过程。
+
+% \subsubsection{Speed of Movement per Truck Passage}
+\subsubsection{每辆卡车通行引起的滑动速度}
+% The speed of travel, V, for the sliding bearing for movement caused by truck passage, can be determined from the following general equation;
+交通引起的运动的滑动支座的滑动速度 $V$ 可以通过\cref{eq:speed-truck}确定：
+\begin{equation}
+  \label{eq:speed-truck}
+  \text{average travel speed} = \frac{\text{total horizontal movement per truck passage}}{\text{travel time}}
+\end{equation}
+% The total horizontal movement of the sliding surface per truck passage can be determined from the following equation:
+每次卡车通过时滑动面的总水平移动量可由\cref{eq:total-movement-truck}确定：
+\begin{equation}
+  \label{eq:total-movement-truck}
+  \text{total horizontal movement per truck passage} = 2 \times 1.33 \times A \times \theta \times  D_1 \times n
+\end{equation}
+\begin{EqDesc}{1.33}
+  \item [A] 当梁的两端均可以在水平方向上自由运动时，取 1，如果一端约束水平运动，另一端可以自由运动，取 2。
+  \item [\theta] 滑动支座的梁端转角（\unit{rad}）。
+  \item [D_1] 梁端截面从底板到中性轴的距离（\unit{mm}）。
+  \item [1.33] 卡车冲击系数；
+  \item [n] 每次卡车通过引起的等效全振幅水平自由振动运动循环数，最初在此程序中取为 1.0。
+\end{EqDesc}
+
+% The total travel time is the time that it will take for the accumulated horizontal movement due to passage of one truck to occur. It is the time for the first cycle and for all succeeding dynamic vibration cycles to take place. If the component of the time due to dynamic vibration cycles is neglected as described in \cref{subsec:estimate-total-movements}, The resulting time for the movement can be determined from \cref{eq:time-travel-traffic} below:
+总行驶时间是由于一辆卡车的通过而发生的累积水平移动所花费的时间。 这是第一个周期和所有后续动态振动周期发生的时间。 如果如\cref{subsec:estimate-total-movements} 中所述忽略了由于动态振动周期引起的时间分量，则运动的结果时间可以从下面的\cref{eq:time-travel-traffic} 中确定 :
+\begin{equation}
+  \label{eq:time-travel-traffic}
+  t = \frac{\text{bridge span length}}{\text{truck speed}}
+\end{equation}
+
+% \subsubsection{Speed of Movement per Temperature Variation}
+\subsubsection{温差变化引起的滑动速度}
+% The speed of travel, V, for the sliding bearing for movement caused by daily and seasonal temperature change is a much slower velocity. It can be estimated from EQ G.27 below:
+由日温度变化和季节性温度变化引起的滑动支座的移动速度 $V$ 是一个慢得多的速度。 可以从下面的 \cref{eq:speed-temperature} 中估算出来：
+\begin{equation}
+  \label{eq:speed-temperature}
+  \text{average travel speed} = \frac{\text{total horizontal movement per temperature change}}{\text{travel time}}
+\end{equation}
+
+% The total horizontal movement of the sliding surface due to temperature movement is estimated by determining the total yearly temperature movement due to 
+确定由温度运动引起的滑动表面的总水平运动是通过
+% \begin{enumerate*}
+%   \item daily temperature change and 
+%   \item seasonal temperature change.
+% \end{enumerate*}
+\begin{enumerate*}
+  \item 日温差变化，和
+  \item 季节性温差变化。
+\end{enumerate*}
+\begin{gather}
+  \text{total movement due to daily temperature change}= 2 \times \alpha L \Delta T_\text{Daily}\\
+  \text{total movement due to seasonal temperature change}= 2 \times \alpha L \Delta T_\text{Annual}\\
+  \label{eq:total-temperature-movement}
+  \text{total temperature movement}= 2 \times \alpha L \left( \Delta T_\text{Annual} \times 365 + \Delta T_\text{Annual}\right)
+\end{gather}
+
+
+% The total travel time for the total temperature movement as defined in \cref{eq:total-temperature-movement} is 365 days, which can be converted into consistent units.
+\cref{eq:total-temperature-movement} 中定义的总温度运动的用时为 \qty{365}{d}，可以换算成一致的单位。
+
+% \section{DESIGN PROCESS FOR SLIDING SURFACES}
+\section{滑动面的设计流程}
+% \subsection{Steps in Design Process}
+\subsection{设计流程中的步骤}
+% The following steps could be used to select the type of sliding material and its required thickness to meet service life requirements.
+可以通过以下步骤来选择滑动材料的类型及其所需的厚度以满足使用寿命要求。
+
+% \begin{description}[style=nextline,leftmargin=6em]
+%   \item[步骤 1] Calculate the total travel distance demand, (TD)Demand, in miles, using Section G.2.2.
+%   \item[步骤 2] Determine the velocity of movement based on traffic load or temperature movement, using Section G.2.3.
+%   \item[步骤 3] Select a trial sliding surface type and determine the corresponding wear rate, based on PV curves
+%   for the type of material, in in./mile, using Section G.2.1.
+%   \item[步骤 4] Calculate the thickness demand, which is the total predicted wear or reduction in thickness for the sliding surface using the following equation:
+% \begin{align}
+%   (\text{thickness})_\text{Demand}&= (\text{TD})_\text{Demand} \times \text{wear rate} \times \alpha
+%   \text{gross thickness} &= (\text{thickness})_\text{Demand}+ \text{thickness of recess}
+% \end{align}
+% \begin{EqDesc}{(\text{TD})_\text{Demand}} 
+%   \item [(\text{TD})_\text{Demand}] total induced horizontal movement (see Equation G.23)
+%   \item [\alpha] factor to assure that the thickness will not be zero at the end of the service life to prevent undesirable metal to metal contact (>1.0).
+% \end{EqDesc}
+% It should be noted that the (Thickness)Demand is the thickness that is subject to wear. Accordingly the gross thickness is the thickness subject to wear plus the recessed thickness that is used to positively connect the sliding surface to backing plate.
+%   \item[步骤 5] Establish the gross thickness of the material to be specified in the design plan. The thickness of
+%   commercially available sliding surfaces must be larger than the gross thickness calculated in Step 4.
+%   \item[步骤 6] If the commercially available thicknesses are less than the required gross thickness, then there are two available approaches: 
+%   \begin{enumerate*}
+%     \item select another material, such as a reinforced or braided PTFE or other sliding material type, that could meet the demand by repeating Steps 3 through 5, or 
+%     \item calculate the service life of the commercially available thicknesses and develop a replacement strategy accordingly.
+%   \end{enumerate*} 
+% \end{description}
+\begin{description}[style=nextline,leftmargin=6em]
+  \item[步骤 1] 使用\cref{subsec:estimate-total-movements}计算滑动面水平运动总需求 $(\text{TD})_\text{Demand}$，以 \unit{km} 为单位。
+  \item[步骤 2] 使用\cref{subsec:estimate-speed-of-slideing}基于交通荷载和温度运动确定滑动面的运动速度。
+  \item[步骤 3] 使用\cref{subsec:wear-rate}选择试验滑动表面类型并根据材料类型的 $PV$ 曲线确定相应的磨损率，单位为\unit{\micro m/km}。
+  \item[步骤 4] 使用以下公式计算厚度需求，即滑动表面的总预测磨损或厚度减少：
+  \begin{align}
+    (\text{thickness})_\text{Demand}&= (\text{TD})_\text{Demand} \times \text{wear rate} \times \alpha\\
+    \text{gross thickness} &= (\text{thickness})_\text{Demand}+ \text{thickness of recess}
+  \end{align}
+  \begin{EqDesc}{(\text{TD})_\text{Demand}} 
+    \item [(\text{TD})_\text{Demand}] 总水平运动需求（参见 \cref{eq:total-induced-horizontal-movement}）
+    \item [\alpha] 为防止不希望发生的金属与金属接触而确保在使用寿命结束时厚度不会为零的系数（$>1.0$）。
+  \end{EqDesc}
+
+  需要注意的是，$(\text{thickness})_\text{Demand}$ 是会磨损的厚度。 因此，总厚度是经受磨损的厚度加上用于将滑动表面可靠地连接到背板的凹陷厚度。
+  \item[步骤 5] 确定要在设计计划中指定的材料的总厚度。市售滑动表面的厚度必须大于步骤 4 中计算的总厚度。
+  \item[步骤 6] 如果市售厚度小于所需的总厚度，则有两种可用的方法：
+  \begin{enumerate*}
+    \item 通过重复步骤 3 至 5 选择另一种材料，例如可以满足要求增强型或编织型 PTFE 或其他滑动材料类型，或者
+    \item 计算市售厚度的使用寿命并相应地制定更换策略。
+  \end{enumerate*} 
+\end{description}
+
+% \subsection{Design Process Application}
+\subsection{设计流程应用}
+% The process has application to all bearing types that use sliding surfaces to permit horizontal movement, and where horizontal movement is caused by truck load or temperature load. It can also be applied to evaluate the service life of sliding surfaces that are used in combination with elastomeric pads. In these cases, the elastomeric pad is designed to accommodate the high-cycle, low-amplitude horizontal movement due to truck load, and the sliding surface is designed to accommodate the larger-amplitude, low-cycle movement due to temperature. This approach has advantages for design of expansion bearings at the end of a series of continuous spans where the temperature movement is large and the superstructure reactions are low. Combining elastomeric pads with sliding surfaces reduces the required thickness of the elastomeric pads and permits the use of more durable elastomeric bearings in cases in which HLMR types would have been required because of the excessive height required for the elastomeric pads. Further advantages of the reduced elastomeric pad thickness include better stability during construction and operation, and reduced instantaneous and long-term compressive deflection.
+该过程适用于所有使用滑动表面允许水平运动的支座类型，以及水平运动由卡车载荷或温度载荷引起的支座类型。它还可用于评估与弹性垫组合使用的滑动表面的使用寿命。在这些情况下，弹性垫设计用于适应卡车负载引起的高周期、低振幅水平运动，而滑动表面设计用于适应温度引起的较大振幅、低周期运动。这种方法对于在温度变化大且上部结构反应低的一系列连续跨度末端设计膨胀支座具有优势。将弹性体垫与滑动表面组合减少了所需的弹性体垫的厚度，并允许在由于弹性体垫需要的过高高度而需要\acrlong{hlmr}类型的情况下使用更耐用的弹性体支座。减少弹性垫厚度的其他优点包括在施工和操作期间更好的稳定性，以及减少瞬时和长期压缩挠度。

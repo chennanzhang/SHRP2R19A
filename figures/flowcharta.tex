@@ -1,0 +1,82 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\tikzset{
+  >=stealth,
+  start/.style ={
+    rounded rectangle, 
+    node distance=12mm,
+    minimum width =50pt,
+    minimum height =15pt,
+    inner sep=3pt,
+    draw=cyan!80!black,
+    fill=cyan!50!black!20
+  },
+  methodbase/.style ={
+    rectangle,
+    rounded corners=3pt,
+    node distance=12mm,
+    inner sep=5pt ,
+    draw=green!50!black,
+    fill=green!50!black!20,
+  },
+  method/.style={
+    minimum width=3.5cm,
+    methodbase,
+  },
+  input/.style ={
+    trapezium, 
+    trapezium left angle=60, 
+    trapezium right angle=120,
+    draw=yellow!50!black,
+    fill=yellow!50!black!20,
+    minimum height =15pt,
+    inner sep=3pt
+  },
+  end/.style ={
+    rounded rectangle,
+    node distance=12mm,
+    minimum width =50pt,
+    minimum height =15pt,
+    inner sep=3pt ,
+    draw=blue!80!black,
+    fill=blue!50!black!20
+  },
+  theory/.style ={rectangle,node distance=30mm,
+  minimum width =50pt ,minimum height =15pt ,inner sep=3pt ,
+  draw=red!50!black ,fill=red!50!black!20},
+  branch/.style ={diamond,node distance=20mm,aspect=1.8,
+  %minimum width =50pt ,minimum height =15pt ,inner sep=3pt ,
+  draw=red!50!black ,fill=red!50!black!20},
+  root/.style ={
+    circle,draw,
+    minimum height=1cm,
+    draw=orange!80!black,
+    fill=orange!50!black!20
+  }
+}
+\begin{document}\small
+  \begin{tikzpicture}
+    \node (start) [start] {\parbox{2.5cm}{\centering 使用寿命设计的一般步骤}};
+    \node (step1) [method, below= 5mm of start] {\parbox{5cm}{1. 确定工作和使用寿命要求。}};
+    \node (step2) [method, below= 5mm of step1] {\parbox{5cm}{2. 确定满足 LRFD 规范设计规定的可行桥梁系统备选方案。}};
+    \node (step3) [method, below= 5mm of step2] {\parbox{5cm}{3. 根据《指南》各章节中所述的使用寿命要求，评估所选桥梁系统的所有组件、构件和子系统。}};
+    \node (c) [root, right= 1cm of step3] {C};
+    \node (step4a) [branch, below= 5mm of step3] {\parbox{2.2cm}{4a. 使用寿命是否适用？}};
+    \node (step4b) [method, right= 7mm of step4a] {\parbox{3cm}{4b. 确定缓解策略并修改桥梁设计。}};
+    \node (step4c) [branch, below= 5mm of step4a] {\parbox{2.2cm}{4c. 使用寿命需求均已考虑？}};
+    \node (gotoa) [root, below= 5mm of step4c] {A};
+    \draw [->](start)--(step1);
+    \draw [->](step1)--(step2);
+    \draw [->](c)--(step3);
+    \draw [->](step2)--(step3);
+    \draw [->](step3)--(step4a);
+    \draw [->](step4b)--(step4b|-step4c)--(step4c);
+    \draw [->](step4a)--(step4c) node [midway,right]{\footnotesize 否};
+    \draw [->](step4a)--(step4b) node [midway,above]{\footnotesize 是};
+    \draw [->](step4c)--(gotoa) node [midway,right]{\footnotesize 是};
+    \coordinate (A) at ([xshift=-2cm]step4c.west);
+    \draw [->](step4c)--(A) node [at start,above left]{\footnotesize 否}--(A|-step3)--(step3);
+  \end{tikzpicture}
+\end{document}

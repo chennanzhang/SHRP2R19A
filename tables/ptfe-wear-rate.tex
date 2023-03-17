@@ -1,0 +1,29 @@
+\begin{tblr}{
+  colspec={X[c] X[c] S[table-format=5.1] S[table-format=4.0] S[table-format=7.1] S[table-format=5.0]},
+  row{1,2}={m,c,bg=genfg,fg=white,font=\bfseries,guard}
+}
+\SetCell[r=2]{m,c} 材料类型 & \SetCell[r=2]{m,c} 润滑程度 & $V$ & $T$ & $PV$ & 磨损率 \\
+ & & \unit{mm/min} & \unit{\celsius} & \unit{MPa.mm/min} & \unit{\micro m/km}\\
+\SetCell[r=6]{m,c,bg=genbgd!50} 无填充\acrlong*{ptfe} & \SetCell[r=2]{m,c,bg=genbgd!20} 凹痕润滑 & 63.5 & 20 & 1313.5 & 5\\
+& & 635.0 & 20 & 13135.0 & 8\\
+& \SetCell[r=4]{m,c,bg=genbgd!40} 平面无润滑 & 63.5 & 20 & 1313.5 & 11\\ 
+& & 635.0 & 20 & 13135.0 & 2983\\
+& & 63.5 & -25 & 1313.5 & 158\\
+& & 635.0 &-25 & 13135.0 & 4088\\
+\SetCell[r=4]{m,c,bg=genbgd!20} \acrlong{ptfe}织物 & \SetCell[r=4]{m,c,bg=genbgd!20} 平面无润滑 & 63.5 & 20 & 1313.5 & 5\\ 
+& & 635.0 & 20 & 13135.0 & 268\\
+& & 63.5 & -25 & 1313.5 & 426\\
+& & 635.0 &-25 & 13135.0 & 379\\
+\SetCell[r=4]{m,c,bg=genbgd!40} 添加 25\% 玻璃纤维 & \SetCell[r=4]{m,c,bg=genbgd!40} 平面无润滑 & 63.5 & 20 & 1313.5 & -16\\ 
+& & 635.0 & 20 & 13135.0 & -8\\
+& & 63.5 & -25 & 1313.5 & {{{--}}}\\
+& & 635.0 &-25 & 13135.0 & 95\\
+\SetCell[r=4]{m,c,bg=genbgd!20} 添加 25\% 玻璃纤维 & \SetCell[r=4]{m,c,bg=genbgd!20} 平面无润滑 & 63.5 & 20 & 1313.5 & -5\\ 
+& & 635.0 & 20 & 13135.0 & 32\\
+& & 63.5 & -25 & 1313.5 & 63\\
+& & 635.0 &-25 & 13135.0 & 726\\
+\end{tblr}
+\begin{minipage}{\linewidth}
+  \footnotesize\noindent
+  注：压力为 \qty{20.68}{MPa}（\qty{3000}{psi}）
+\end{minipage}

@@ -1,0 +1,76 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\tikzset{
+  >=stealth,
+  start/.style ={
+    rounded rectangle, 
+    node distance=12mm,
+    minimum width =50pt,
+    minimum height =15pt,
+    inner sep=3pt,
+    draw=cyan!80!black,
+    fill=cyan!50!black!20
+  },
+  methodbase/.style ={
+    rectangle,
+    rounded corners=3pt,
+    node distance=12mm,
+    inner sep=5pt ,
+    draw=green!50!black,
+    fill=green!50!black!20,
+  },
+  method/.style={
+    minimum width=3.5cm,
+    methodbase,
+  },
+  input/.style ={
+    trapezium, 
+    trapezium left angle=60, 
+    trapezium right angle=120,
+    draw=yellow!50!black,
+    fill=yellow!50!black!20,
+    minimum height =15pt,
+    inner sep=3pt
+  },
+  end/.style ={
+    rounded rectangle,
+    node distance=12mm,
+    minimum width =50pt,
+    minimum height =15pt,
+    inner sep=3pt ,
+    draw=blue!80!black,
+    fill=blue!50!black!20
+  },
+  theory/.style ={rectangle,node distance=30mm,
+  minimum width =50pt ,minimum height =15pt ,inner sep=3pt ,
+  draw=red!50!black ,fill=red!50!black!20},
+  branch/.style ={diamond,node distance=20mm,aspect=1.8,
+  %minimum width =50pt ,minimum height =15pt ,inner sep=3pt ,
+  draw=red!50!black ,fill=red!50!black!20},
+  root/.style ={
+    circle,draw,
+    minimum height=1cm,
+    draw=orange!80!black,
+    fill=orange!50!black!20
+  }
+}
+\begin{document}\small
+  \begin{tikzpicture}
+    \node (a) [root] {A};
+    \node (step5) [method, below= 5mm of a] {\parbox{5cm}{5. 开发满足 LRFD 规范和使用寿命要求的改进型桥梁系统。}};
+    \node (step6) [method, below= 5mm of step5] {\parbox{5cm}{6. 确定所选桥梁备选方案是否满足要求以及与设计更改是否兼容。}};
+    \node (step7a) [branch, below= 5mm of step6] {\parbox{2.2cm}{7a. 备选方案是否满足要求？}};
+    \node (step7b) [method, right= 7mm of step7a] {\parbox{4cm}{7b. 对桥梁组件、子系统或构件进行适当的修改以实现兼容性。}};
+    \node (step8) [start,below= 5mm of step7a] {\parbox{2.5cm}{\centering 8. 开发所选桥梁方案的最终配置。}};
+    \node (b) [root,below= 5mm of step8] {B};
+    \draw [->](a)--(step5);
+    \draw [->](step5)--(step6);
+    \draw [->](step6)--(step7a);
+    \draw [->](step8)--(b);
+    \draw [->](step7b)--(step7b|-step8)--(step8);
+    \draw [->](step7a)--(step8) node [midway,right]{\footnotesize 是};
+    \draw [->](step7a)--(step7b) node [midway,above]{\footnotesize 否};
+  \end{tikzpicture}
+\end{document}

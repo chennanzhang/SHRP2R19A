@@ -1,0 +1,63 @@
+\documentclass[colortheme=cyan]{transbook}
+\input{setup/setup.tex}  %% 自定义设置，包括词汇表和缩略语
+%%% 参考文献设置
+\usepackage[backend=biber, 
+  style=gb7714-2015ay, 
+  % gbalign=gb7714-2015, 
+  natbib=true,isbn,
+  gbannote=true,
+  gbpub=false]{biblatex}
+\def\UrlFont{\ttfamily}  %% 恢复 url 的字体样式
+\addbibresource[location=local]{R19A.bib}
+
+%%% 图书元数据的设置
+\Booksetup{
+  BookTitle   = 桥梁使用寿命设计指南,
+  BookTitle*  = Design Guide for Bridge for Service Life,
+  BriefIntro    = 
+    { 
+      本书的重点是北美的设计实践，并为混凝土和钢结构的公路桥梁提供使用寿命设计原则的应用参考。该文档介绍了使用寿命设计、使用寿命设计过程以及使用寿命设计的不同概念。可供桥梁业主和设计师可以使用它来提高使用本文档中包含的方法和参考建造的桥梁的性能。
+    },
+  CoverGraph    = graphics/cvgraph.png,
+  AuthorList*   = {Atorod Azizinamini, Edward H. Power, Glenn F. Myers, H. Celik Ozyildirim},
+  AuthorList    = {张晨南}, 
+  WrittenStyle  = 译,
+}
+
+%%% 正文
+
+\begin{document}
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+\cleardoublepage 
+\phantomsection\addcontentsline{toc}{chapter}{词汇表}
+\printglossary[nonumberlist]
+\cleardoublepage
+\phantomsection\addcontentsline{toc}{chapter}{缩略语}
+\printacronyms[nonumberlist]
+\mainmatter
+\input{contents/chp01} % 英文输入完成，差图片和表格，文字待修改。
+\input{contents/chp02} % 英文输入完成。
+\input{contents/chp03} % 英文输入完成。
+\input{contents/chp04} % 英文输入完成。
+\input{contents/chp05} % 英文输入完成。
+\input{contents/chp06} % 英文输入完成。
+\input{contents/chp07} % 英文输入完成。
+\input{contents/chp08} % 英文输入完成。
+\input{contents/chp09} % 英文输入完成。
+\input{contents/chp10} % 差部分图，英文输入完成。
+\input{contents/chp11} % 差部分图，英文输入完成。
+\appendix 
+\input{appendix/A}     % 英文输入完成
+\input{appendix/B}     % 差部分图，英文输入完成。
+\input{appendix/C}     % 差全部的图，英文输入完成。
+\input{appendix/D}     % 差两张图，英文输入完成。
+\input{appendix/E}     % 差全部的图，英文输入完成。
+\input{appendix/F}     % 差全部的图，英文输入完成。
+\input{appendix/G}     % 差两张图，文字待修改
+% \backmatter
+\cleardoublepage
+\printbibliography[heading=bibintoc] 
+\end{document}

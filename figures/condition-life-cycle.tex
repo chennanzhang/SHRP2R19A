@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth,line join=round]
+    \draw[->](0,0)--(10,0)node[midway,below=3mm]{时间};
+    \draw[->](0,0)--(0,4.2)node[below left]{桥梁状态};
+    \draw[thin,densely dashed] (1,0)--++(0,4) node [at start,below]{$T_0$};
+    \draw[thin,densely dashed] (9,0)--++(0,4) node [at start,below]{$T_\text{f}$};
+    \draw[thin,densely dashed] (-0.2,1)--++(9.7,0) node [at start,left]{$C_\text{f}$};
+    \draw[thin,<->](1,3.8)--(9,3.8)node[midway,below]{使用寿命};
+    \draw[ultra thick](1.05,3.65)..controls(3.5,3.6)and(4.2,3.3)..(4.5,2.2)--(4.5,2.95)..controls(6.0,2.9)and(6.7,2.6)..(7.0,1.5)--(7.0,2.25)..controls(8.5,2.2)and(8.7,1.9)..(9,1.0);
+  \end{tikzpicture}
+\end{document}

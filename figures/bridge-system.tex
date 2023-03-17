@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+
+\tikzset{
+  >=stealth,
+  methodbase/.style ={
+    rectangle,
+    rounded corners=3pt,
+    node distance=12mm,
+    inner sep=5pt,
+    minimum width=3cm,
+    minimum height=1.0cm,
+  },
+  sys/.style={
+    methodbase,
+    draw=red!50!black,
+    fill=red!50!black!20,
+  },
+  comp/.style={
+    methodbase,
+    draw=blue!50!black,
+    fill=blue!50!black!20,
+  },
+  ele/.style={
+    methodbase,
+    draw=green!50!black,
+    fill=green!50!black!20,
+  }
+}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \coordinate (A) at (0,-0.9);
+    \node (system) [sys] {桥梁系统};
+    \node (super) [comp,below = 8mm of system] {上部结构组件};
+    \node (sub) [comp,right = 1cm of super] {下部结构组件};
+    \node (deck) [comp,left = 1cm of super] {桥面系组件};
+    \draw(deck)--(deck|-A)--(A-|sub)--(sub);
+    \draw(system)--(super);
+  \end{tikzpicture}
+\end{document}

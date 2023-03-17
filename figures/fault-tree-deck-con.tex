@@ -1,0 +1,64 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+
+\tikzset{
+  >=stealth,
+  obj/.style ={
+    rounded rectangle, 
+    node distance=12mm,
+    minimum width =50pt,
+    minimum height =15pt,
+    inner sep=3pt,
+    minimum width=3cm,
+    draw=orange!80!black,
+    fill=orange!50!black!20
+  },
+  methodbase/.style ={
+    rectangle,
+    rounded corners=3pt,
+    node distance=12mm,
+    inner sep=5pt ,
+    draw=green!50!black,
+    fill=green!50!black!20,
+  },
+  faultblock/.style={
+    minimum width=3cm,
+    minimum height=1.0cm,
+    methodbase,
+  },
+  mk/.style= {
+    cylinder, shape border rotate=90, draw,gray,
+    minimum height=3mm,
+    aspect=0.5
+  },
+  root/.style ={
+    circle,draw,
+    minimum height=1.5cm,
+    draw=orange!80!black,
+    fill=orange!50!black!20
+  }
+}
+\begin{document}\small
+  \begin{tikzpicture}
+    \node (load) [faultblock] {\parbox{2.5cm}{\centering 荷载诱发因素}};
+    \node (mk1) [mk, below = 2.5mm of load]{};
+    \coordinate (A) at (0,-2.2);
+    \coordinate (B) at (0,-1.4);
+    \coordinate (C) at (0,-3.6);
+    \node (traffic) at ([xshift=-3cm]A)[faultblock]{\parbox{2.5cm}{\centering 交通荷载诱发}};
+    \node (system)  at ([xshift= 3cm]A)[faultblock]{\parbox{2.5cm}{\centering 系统相关因素}};
+    \draw (load)--(mk1)--(B)--(B-|traffic)--(traffic)(B)--(B-|system)--(system);
+    \node (mk2) [mk, below = 2.5mm of traffic]{};
+    \node (mk3) [mk, below = 2.5mm of system ]{};
+    \node (thermal) [root, below = 5mm of mk3] {\parbox{2em}{温度作用}};
+    \node (shrinkage) [root, left = 5mm of thermal] {\parbox{2em}{差异收缩}};
+    \node (frame) [root, right= 5mm of thermal] {\parbox{3em}{系统框架约束}};
+    \node (overload) [root, below = 5mm of mk2] {超载};
+    \node (fatigue) [root, left = 5mm of overload] {疲劳};
+    \node (wear) [root, right= 5mm of overload] {磨损};
+    \draw (traffic)--(mk2)--(overload)(fatigue)--(fatigue|-C)--(C-|wear)--(wear);
+    \draw (system)--(mk3)--(thermal)(shrinkage)--(shrinkage|-C)--(C-|frame)--(frame);
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,128 @@
+% \chapter{CURVED GIRDER BRIDGES}
+\chapter{弯梁桥}
+% \section{BACKGROUND}
+\section{背景}
+This section contains a procedure developed (Doust 2011) to extend the application of jointless bridges to curved steel I-girder bridges. There are some limitations that must be observed when using the suggested approach that
+reflect the range of parameters considered in its development. The study considered several bridge configurations for which detailed finite element analyses were conducted. These analyses were then used to 
+\begin{enumerate*}
+  \item comprehend the performance of jointless curved girder bridges, and
+  \item develop approximate solutions that are in reasonable agreement with results of detailed finite element analysis.
+\end{enumerate*}
+Following is the list of assumptions and cases that were considered during the development of the suggested approach.
+\begin{enumerate}
+  \item Steel I-girder superstructure made composite with concrete deck;
+  \item Concrete integral abutments at the bridge ends supported on steel H-piles;
+  \item One or more intermediate piers isolated from the bridge superstructure by elastomeric bearings;
+  \item Concrete parapets integrally connected to the concrete deck;
+  \item Superstructure super-elevation ranging between 0\% and 6\%;
+  \item Abutment wall height ranging between 9 ft and 13 ft;
+  \item Wingwalls separated from the abutment wall by means of joints;
+  \item Approach slab connected to abutment wall using a pinned connection detail;
+  \item Bridge plan symmetric with respect to the mid-length of the bridge;
+  \item Radial piers and abutments (i.e., the lines of all abutments and piers intersect at the bridge center of curvature);
+  \item Bridge arc length-over-width ratio larger than 3.0;
+  \item Ratio of the lengths of end spans to interior spans approximately equal to 0.8; and
+  \item All intermediate spans of approximately equal length.
+\end{enumerate}
+
+The following two sections present step-by-step procedures to calculate the magnitude and direction of bridge end displacements and determine the optimum abutment piles orientation.
+
+% \section{CALCULATING THE MAGNITUDE AND DIRECTION OF END DISPLACEMENT}
+\section{梁端位移的大小和方向的计算}
+For curved integral abutment bridges meeting the limitations described earlier, the following procedure can be employed to calculate the magnitude and direction of end displacements.
+\begin{enumerate}
+  \item Determine the point of zero movement for the bridge and consequently the bridge length along the centerline of the bridge, $L_\text{o}$ ,that should be used in calculating the end displacement. For symmetric bridges supported on substructure with relatively symmetrical stiffness, it can be assumed that $L_\text{o}$ is equal to half the bridge total arc length. Otherwise, a more detailed approach that takes into account the relative stiffnesses of the supports should be used to calculate the point of zero movement.
+  \item Determine the effective coefficient of thermal expansion using:
+  \begin{equation}
+    \alpha_\text{equivalent} = \frac{(EA\alpha)_\text{deck} +(EA\alpha)_\text{girder} }{(EA)_\text{deck} + (EA)_\text{girder}}
+  \end{equation}
+  \item Calculate the bridge shortening due to contraction using:
+  \begin{equation}
+    \Delta_\text{contraction}= \alpha_{equivalent}\cdot \Delta T \cdot L_\text{o}
+  \end{equation}
+  \item Find the modification factor for bridge shortening due to contraction using the information provided in \cref{fig:modification-factor-contraction}, which provides the relationship between radius of curvature and the modification factor used in \cref{eq:total-shortening}.
+  \begin{figure}
+    % \includegraphics[width=\linewidth]{graphic-file}
+    % \caption{Modification factor for bridge contraction}
+    \caption{Modification factor for bridge contraction}
+    \label{fig:modification-factor-contraction}
+  \end{figure}
+  \item Determine the equivalent shrinkage strain using:
+  \begin{equation}
+    \varepsilon_\text{sc,equivalent} =\varepsilon_\text{sc,girder} + ( \varepsilon_\text{sc,deck} - \varepsilon_\text{sc,girder})\frac{(EA)_\text{deck}}{(EA)_\text{deck}+(EA)_\text{girder}} 
+  \end{equation}
+  \item Calculate the bridge shortening due to shrinkage using:
+  \begin{equation}
+    \Delta_\text{shrinkage} =\varepsilon_\text{sh,equivalent}\times L_\text{o}
+  \end{equation}
+  \item Find the modification factor for bridge shortening due to shrinkage using \cref{fig:modification-factor-shrinkage}.
+  \begin{figure}
+    % \includegraphics[width=\linewidth]{graphic-file}
+    % \caption{Modification factor for bridge shrinkage.}
+    \caption{Modification factor for bridge shrinkage.}
+    \label{fig:modification-factor-shrinkage}
+  \end{figure}
+  \item\label{lst:cal-total-shortening} Calculate the total factored bridge shortening using:
+  \begin{equation}
+    \label{eq:total-shortening}
+    \Delta_\text{total} =1.3 (\gamma_\text{TUc}\Delta_{thermal}+ \gamma_{sh}\Delta_\text{shrinkage})
+  \end{equation}
+  \item Calculate the bridge width effect factor using the following equations. These factors are calculated for the inner and outer corners of the bridge separately. The purpose of these factors is to determine the direction of end displacement.
+  \begin{align}
+    k_\text{in}  &= 1 + 0.84\frac{W}{L_\text{c}}\\
+    k_\text{out} &= 1 - 0.84\frac{W}{L_\text{c}}
+  \end{align}
+  \item\label{lst:find-direction} Find the direction of the bridge corners displacements using:
+  \begin{align}
+    \alpha_\text{in}  &= k_\text{in}  \left[ 90- 11 \left(\frac{L}{R}\right)\right] \quad \text{角度制}\\
+    \alpha_\text{out} &= k_\text{out} \left[ 90- 11 \left(\frac{L}{R}\right)\right] \quad \text{角度制}
+  \end{align}
+  \item Knowing the total bridge shortening found in step \ref{lst:cal-total-shortening} and the direction found in step \ref{lst:find-direction}, solve \cref{eq:solve1,eq:solve2,eq:solve3,eq:solve4,eq:solve5,eq:solve6,eq:solve7} to find the new location of the bridge corner. The corner of the bridge is assumed to be originally located at the coordinates $x_\text{A} = R_\text{A}$ and $y_\text{A} = 0$ in which $R_\text{A}$ is the radius of the bridge at  that specific corner.
+  \begin{align}
+    \label{eq:solve1} x_{A'}&=\frac{-ab+\sqrt{a^2b^2-(b^2-R'^2)(1+a^2)}}{1+a^2}\\
+    \label{eq:solve2} y_{A'}&=a x_{A'} + b
+  \end{align}
+  where:
+  \begin{align}
+    \label{eq:solve3}  a &= -\tan \alpha \\
+    \label{eq:solve4}  a &= R \tan \alpha \\
+    \label{eq:solve5}  \gamma &= \tan^{-1}\left(\frac{y_{A'}}{x_{A'}}\right)\\
+    \label{eq:solve6}  L'     &= 2R'(\beta-\gamma)\\
+    \label{eq:solve7}  \beta  &= \frac{L}{2R}
+  \end{align}
+  \item Using the new coordinates of the bridge corner $x_{A'}$ and $y_{A'}$ , the components of bridge corner displacement are found as follows:
+  \begin{align}
+    \Delta_{x} &= x_{A'} -R_{A}\\    
+    \Delta_{y} &=  y_{A'}   
+  \end{align}
+\end{enumerate}
+
+% \section{OPTIMUM PILE ORIENTATION}
+\section{最佳桩方向}
+In curved bridges, the optimum orientation of the piles depends mainly on the bridge geometry. Therefore, in contrast to straight bridges, the optimum direction is not the same for all curved bridges. In this section, a method is presented to find the optimum pile orientation in a curved bridge. This method is based on finite element simulation of several curved integral steel I-girder bridges (Doust 2011). The same concept employed for straight bridges is also used for curved girder bridges; namely, the piles should be oriented so that the strong axis of their sections is perpendicular to the direction of bridge maximum displacement.
+
+The following steps should be used to obtain the optimal abutment pile orientation:
+\begin{enumerate}
+  \item The critical load combination for design of the piles should be determined to be either expansion based or contraction based. \cref{fig:control-type-load-combination} may help for determining the controlling load combination.
+  \begin{figure}
+    % \includegraphics[width=\linewidth]{graphic-file}
+    \caption{Controlling type of load combination}
+    \label{fig:control-type-load-combination}
+  \end{figure}
+  \item The direction of bridge maximum end displacement, as defined in \cref{fig:direction-bridge-end-displacement}, should be determined using the curves presented in \cref{fig:angle-direction-bridge-end-displacement}.
+  \begin{figure}
+    \begin{minipage}{0.5\linewidth}\centering
+      % \includegraphics[width=\linewidth]{graphic-file}
+      % \caption{Direction of bridge end displacement.}
+      \caption{Direction of bridge end displacement.}
+      \label{fig:direction-bridge-end-displacement}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}\centering
+      % \includegraphics[width=\linewidth]{graphic-file}
+      % \caption{Angle of direction of bridge end displacement}
+      \caption{Angle of direction of bridge end displacement}
+      \label{fig:angle-direction-bridge-end-displacement}
+    \end{minipage}%
+  \end{figure}
+  \item The strong axis of the abutment piles perpendicular to the displacement direction found in Step 2 should be oriented. If the type of critical load combination cannot be distinguished for a specific bridge, the bridge should be analyzed for both expansion-control and contraction-control pile orientations from Step 2 and then the optimum orientation should be chosen.
+\end{enumerate}

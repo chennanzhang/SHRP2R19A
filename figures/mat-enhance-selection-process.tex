@@ -1,0 +1,55 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+
+\tikzset{
+  >=stealth,
+  methodbase/.style ={
+    rectangle,
+    rounded corners=3pt,
+    node distance=12mm,
+    inner sep=5pt,
+    minimum width=2cm,
+    minimum height=2.0cm,
+  },
+  arr/.style={
+    single arrow,
+    single arrow head extend=.20cm, 
+    single arrow head indent=.05cm,
+    draw=red!50!black,
+    fill=red!50!black!20,
+  },
+  ele/.style={
+    methodbase,
+    draw=green!50!black,
+    fill=green!50!black!20,
+  }
+}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \node (32) [ele] {\parbox{2cm}{\centering 材料类型 \\ （第 3.2 节）}};
+    \node (evaluate) [arr,right =3mm of 32] {评估};
+    \node (33) [ele,right =3mm of evaluate] {\parbox{2.3cm}{\centering 影响使用寿命因素 \\ （第 3.3 节）}};
+    \node (mitigate) [arr,right =3mm of 33] {缓解};
+    \node (34) [ele,right =3mm of mitigate] {\parbox{2.4cm}{\centering 提高使用寿命的策略 \\ （第 3.4 节）}};
+    \node (develop) [arr,right =3mm of 34] {开发};
+    \node (35) [ele,right =3mm of develop] {\parbox{2cm}{\centering 策略选择 \\ （第 3.5 节）\\ 设计方法\\
+    材料选择\\
+    保护措施\\
+    施工最佳工法\\
+    维护计划}};
+    % \node (super) at ([xshift=-2.5cm,yshift=-1.2cm]root.south)[ele] {上部结构子系统（钢/混凝土）};
+    % \coordinate (B) at ([yshift=-1cm]super.south);
+    % \node (bearing) [ele,right=3cm of super] {支座};
+    % \node (girder) at ([xshift=-2cm]B) [ele] {梁};
+    % \node (arch) at ([xshift=2cm]B) [ele] {拱};
+    % \node (truss) [ele,below=3mm of girder] {桁架};
+    % \node (cable) [ele,below=3mm of arch] {索支承};
+    % \draw(root)--(root|-A);
+    % \draw(super)--(super|-A)--(A-|bearing)--(bearing);
+    % \draw(super)--(super|-truss);
+    % \draw(girder)--(arch);
+    % \draw(truss)--(cable);
+  \end{tikzpicture}
+\end{document}

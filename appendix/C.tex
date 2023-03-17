@@ -1,0 +1,198 @@
+% \chapter{DESIGN OF PILES FOR FATIGUE AND STABILITY}
+\chapter{桩的疲劳和稳定性设计}
+% This appendix provides steps that could lead to development of design aid for piles subjected to axial load and lateral movement. The principal steps are explained and are customized for development of design aids for 50 ksi steel H piles.
+本附录提供了可能导致开发用于承受轴向载荷和横向移动的桩的设计辅助工具的步骤。解释了主要步骤，并针对 \qty{50}{ksi} H 型钢桩的设计辅助工具的开发进行了定制。
+% \section{ESTIMATION OF MAXIMUM ALLOWABLE STRAIN}
+\section{最大容许应变估计}
+% Seasonal and daily temperature fluctuations subject steel H piles in jointless bridges to cyclic loading, which can result in fatigue failures of H piles. This is especially important as the magnitude of cyclic strain exceeds elastic limits. The seasonal and daily temperature fluctuations subject H piles, every year, to one large cycle, due to seasonal temperature change, and a number of smaller load cycles, due to daily temperature loading \cite{dicleli2004e,karalar2010d}. \cref{fig:pile-strain-time} shows typical H-pile cyclic strain \cite{dicleli2004e}.
+季节性和日常温度波动会使无缝桥梁中的 H 型钢桩承受循环载荷，这可能导致 H 型桩的疲劳失效。 这一点尤其重要，因为循环应变的大小超过了弹性极限。 由于季节性温度变化，季节性和每日温度波动每年都会使 H 桩经历一个大循环，以及由于每日温度负荷 \cite{dicleli2004e,karalar2010d} 而导致许多较小的负荷循环。 \cref{fig:pile-strain-time} 显示了典型的 H 桩循环应变 \cite{dicleli2004e}。
+
+\begin{figure}
+  % \includegraphics[width=\linewidth]{graphic-file}
+  % \caption{Pile strain as a function of time. \cite{dicleli2004e}}
+  \caption{桩应变随时间的变化 \cite{dicleli2004e}}
+  \label{fig:pile-strain-time}
+\end{figure}
+
+% This strain is the maximum longitudinal strain in steel H piles, typically located at the point of fixity below the pile head.
+该应变是 H 型钢桩的最大纵向应变，通常位于桩头下方的固定点。
+
+% The following is one alternative for predicting the fatigue life of steel elements subjected to variable amplitude cyclic loading. The steps involve concepts of cycle counting and use of damage models for keeping track of accumulated damages due to cycling loading (Gere and Goodno 2012).
+以下是预测承受变幅循环载荷的钢元件疲劳寿命的一种替代方法。 这些步骤涉及循环计数的概念和使用损坏模型来跟踪由于循环加载造成的累积损坏（Gere 和 Goodno 2012）。
+% \begin{enumerate}
+%   \item Obtain the loading history to which the steel element is subjected.
+%   \item Develop an S-N type curve for the material under consideration. In general, in the low cycle regime (yearly seasonal cycle when steel element is subjected to strain exceeding elastic limits), the data should be presented in terms of strain versus number of cycles to failure.
+%   \item Use a cycle counting method, such as the rain flow method (ASTM 1049-85), to convert the variable amplitude loading into equivalent constant amplitude loading.
+%   \item Use a damage model, such as Miner’s rule, to determine the time to failure.
+% \end{enumerate}
+\begin{enumerate}
+  \item 获取钢\gls*{element}承受的加载历史
+  \item 为所考虑的材料开发一条 $S$-$N$ 曲线。 一般而言，在低循环状态下（当钢元件承受超过弹性极限的应变时的年度季节性循环），数据应以应变与失效循环数的关系表示。
+  \item 使用循环计数法，如雨流法（ASTM 1049-85），将变幅载荷转换为等效的等幅载荷。
+  \item 使用损伤模型（例如 Miner 规则）来确定故障时间。
+\end{enumerate}
+
+% Dicleli and Albhaisi \yearcite{dicleli2004e} suggest using equation \cref{eq:strain-amplitude} for relating strain amplitude to fatigue life.
+\pnme{Dicleli} 和 \pnme{Albhaisi} \yearcite{dicleli2004e} 建议使用 \cref{eq:strain-amplitude} 将应变幅度与疲劳寿命联系起来。
+\begin{equation}
+  \label{eq:strain-amplitude}
+  \varepsilon_\text{a} = M \left( 2N_\text{f} \right)^m 
+\end{equation}
+\begin{EqDesc}{N_\text{f}}
+  \item[\varepsilon_\text{a}] 恒定应变幅值；
+  \item[N_\text{f}] 对应于 $\varepsilon_\text{a}$ 的疲劳寿命（失效循环次数）；
+  \item[M] 由实验测试确定的系数（0.0795）；
+  \item[m] 由实验测试确定的指数（\num{-0.448}）。
+\end{EqDesc}
+
+% Dicleli and Albhaisi (2004) suggest using Miner’s rule, as a damage model for steel H piles. \cref{eq:miners-rule} expresses Miner’s rule.
+\pnme{Dicleli} 和 \pnme{Albhaisi} \yearcite{dicleli2004e} 建议使用 Miner 规则作为 H 型钢桩的损伤模型。\cref{eq:miners-rule} 表示 Miner 规则。
+\begin{equation}
+  \label{eq:miners-rule}
+  \sum \limits_{i=1}^n \frac{n_i}{N_i} \leqslant 1
+\end{equation}
+\begin{EqDesc}{N_i}
+  \item[n_i] 与装载数 $i$ 关联的循环次数,
+  \item[N_i] 同一工况失效时的循环次数。
+\end{EqDesc}
+
+% Dicleli and Albhaisi (2004) assume that H steel piles are subjected to two different constant amplitude loadings, one corresponding to seasonal temperature changes and another representing daily temperature changes. Therefore, Miner’s rule can be expanded as shown by \cref{eq:miners-rule-expanded}.
+\pnme{Dicleli} 和 \pnme{Albhaisi} \yearcite{dicleli2004e} 假设 H 型钢桩承受两种不同的等幅荷载，一种对应于季节性温度变化，另一种对应于每日温度变化。 因此，Miner 的规则可以扩展为\cref{eq:miners-rule-expanded}。
+\begin{equation}
+  \label{eq:miners-rule-expanded}
+  \frac{n_\text{s}}{N_\text{fs}}+\frac{n_\text{l}}{N_\text{fl}}=1
+\end{equation}
+
+% In \cref{eq:miners-rule-expanded}, $n_\text{s}$ and $n_\text{l}$ are the number of small and large amplitude strain cycles due to temperature changes during the service life of the bridge, respectively, and $N_\text{fs}$ and $N_\text{fl}$ are the total number of cycles to failure for the corresponding small and large amplitude strain cycles, respectively. According to Dicleli and Albhaisi (2004), for 100 years of service life, the number of small amplitude cycles is $n_\text{s}=14800$, and the number of large amplitude cycles is $n_\text{l}=100$. These values are obtained by studying field performance of several jointless bridges and developing types of data shown in \cref{fig:pile-strain-time}.
+在 \cref{eq:miners-rule-expanded} 中，$n_\text{s}$ 和 $n_\text{l}$ 是在使用寿命期间由于温度变化引起的小振幅和大振幅应变循环的数量 分别为桥梁，$N_\text{fs}$ 和 $N_\text{fl}$ 分别是对应的小振幅应变循环和大振幅应变循环的失效循环总数。 根据 \pnme{Dicleli} 和 \pnme{Albhaisi} \yearcite{dicleli2004e}，对于 100 年的使用寿命，小振幅循环数为 $n_\text{s}=14800$，大振幅循环数为 $n_\text{l}= 100$。 这些值是通过研究几个无缝桥梁的现场性能和开发 \cref{fig:pile-strain-time} 中显示的数据类型获得的。
+
+% For large and small amplitude loading, \cref{eq:strain-amplitude} can be customized as follows \cite{dicleli2004e}:
+对于大振幅和小振幅加载，\cref{eq:strain-amplitude} 可以定制如下 \cite{dicleli2004e}：
+\begin{align}
+  \label{eq:strain-amplitude-small}
+  \varepsilon_\text{as} &=   M \left( 2N_\text{fs} \right)^m \\
+  \label{eq:strain-amplitude-large}
+  \varepsilon_\text{al} &=   M \left( 2N_\text{fl} \right)^m 
+\end{align}
+
+% To facilitate development of an “allowable” strain to be used in selecting a steel pile capable of meeting the fatigue requirement, the small strain amplitude, $\varepsilon_\text{as}$ , is related to large strain amplitude, $\varepsilon_\text{al}$ , using a proportionality constant, $\beta$, resulting in the following relationship:
+为了便于开发用于选择能够满足疲劳要求的钢桩的“允许”应变，小应变幅度 $\varepsilon_\text{as}$ 与大应变幅度 $\varepsilon_\text{al}$ 相关，使用比例常数 $\beta$，得到以下关系：
+\begin{equation}
+  \label{eq:stain-proportionality}
+  \varepsilon_\text{as} = \beta \varepsilon_\text{al}
+\end{equation}
+
+% In \cref{eq:stain-proportionality}, $\beta$ is estimated to be 0.25 \cite{karalar2010d}. By substituting \cref{eq:stain-proportionality} into \cref{eq:strain-amplitude-small} and solving for constant amplitude life to failure, \cref{eq:strain-amplitude-small,eq:strain-amplitude-large} could then be used to determine the following \cite{dicleli2004e}:
+在 \cref{eq:stain-proportionality} 中，$\beta$ 估计为 0.25 \cite{karalar2010d}。 通过将 \cref{eq:stain-proportionality} 代入 \cref{eq:strain-amplitude-small} 并求解恒定振幅失效寿命，\cref{eq:strain-amplitude-small,eq:strain-amplitude-large} 然后可用于确定以下 \cite{dicleli2004e}：
+\begin{align}
+  \label{eq:failure-number-short}
+  N_\text{fs} &= \frac12 \left( \frac{\beta \varepsilon_\text{al}}{M}\right)^{\frac{1}{m}} \\
+  \label{eq:failure-number-long}
+  N_\text{fl} &= \frac12 \left( \frac{\varepsilon_\text{al}}{M}\right)^{\frac{1}{m}}
+\end{align}
+
+By substituting \cref{eq:failure-number-short,eq:failure-number-long} into \cref{eq:miners-rule-expanded} and solving for $\varepsilon_\text{al}$ , the maximum large amplitude strains that the pile can sustain without fatigue failure can be obtained as follows \cite{dicleli2004e}:
+\begin{equation}
+  \label{eq:strain-short-solved}
+  \varepsilon_\text{al} =  \cfrac{2n_\text{s}}{\left( \dfrac{\beta}{M}\right)^{\frac{1}{m}}}+\cfrac{2n_\text{l}}{\left( \dfrac{1}{M}\right)^{\frac{1}{m}}} 
+\end{equation}
+
+Substituting the previously stated values for the parameters in \cref{eq:strain-short-solved}, which are: $n_\text{s}=14800$ , $n_\text{l}=100$ ,
+$\beta = 0.25$ , $M = 0.0795$ , and $m = −0.448$ , $\varepsilon_\text{al}$ is then determined to be 0.002967.
+
+Based on the calculated maximum large strain amplitude, $\varepsilon_\text{al}=0.002967$ , the maximum cyclic curvature
+amplitude, $\Psi_\text{f}$ at fatigue failure of the pile is expressed as :
+\begin{equation}
+  \label{eq:curvature-amplitude}
+  \Psi_\text{f}= \frac{2 \varepsilon_\text{al}}{d_\text{p}}
+\end{equation}
+\begin{EqDesc}{d_\text{p}}
+  \item[d_\text{p}] width of the pile in the direction of the cyclic displacement
+\end{EqDesc}
+
+Knowing the cross section of the steel pile to be used, complete non-linear moment curvature characteristics of the pile can be developed. From this relationship, the maximum moment that a steel pile can sustain without failure can be estimated using the maximum “allowable” curvature, as obtained from \cref{eq:curvature-amplitude}. The maximum moment that a steel pile can sustain can then be used to obtain the maximum lateral displacement that the steel pile can accommodate without fatigue failure. The maximum lateral displacement is obtained through a non-linear pushover analysis as described in the next section.
+
+% \section{PUSHOVER ANALYSIS EXAMPLE}
+\section{Pushover 分析示例}
+The development of the design aids require conducting static pushover analysis. Static nonlinear pushover analysis using the finite element software SAP2000 can be used to estimate the maximum lateral displacement capacity of steel H piles based on fatigue consideration. Only two sections (HP10x57 and HP12x84) meet the compact ductility requirements for A36 and A50 steels, as described in Section 8.6.2.4.2b. These two cross-sections were used for pushover analysis.
+% \subsection{Soil-Pile Interaction Model}
+\subsection{桩土相互作用模型}
+% \subsubsection{Piles Driven in Clay}
+% \subsubsection{粘土中的钻孔桩}
+For the purpose of a pushover analysis, the p-y curve (for piles driven in clay) can be simplified as a bilinear curve, as shown in (\cref{fig:p-y-curves}).
+
+\begin{figure}
+  % \includegraphics[width=\linewidth]{graphic-file}
+  % \caption{Actual and modeled p-y curves for clay. (Dicleli and Albhaisi 2004)}
+  \caption{Actual and modeled p-y curves for clay. (Dicleli and Albhaisi 2004)}
+  \label{fig:p-y-curves}
+\end{figure}
+
+In \cref{fig:p-y-curves}, the ultimate response, $P_\text{u}$ , is estimated as:
+\begin{equation}
+  P_\text{u} =9 C_\text{u} d_\text{p}
+\end{equation}
+\begin{EqDesc}{C_\text{u}}
+  \item[C_\text{u}] 黏土的无约束剪切强度；
+  \item[d_\text{p}] 桩基宽度。
+\end{EqDesc}
+
+The elastic modulus of the clay soil can be estimated as:
+
+\begin{equation}
+  E_\text{s} = \frac {9 C_\text{u}}{5 \varepsilon_{50}}
+\end{equation}
+\begin{EqDesc}{\varepsilon_{50}}
+  \item[\varepsilon_{50}] 50\% 极限土抗力下的土应变。
+\end{EqDesc}
+
+% The following table lists the corresponding values of $C_\text{u}$ and $\varepsilon_{50}$ for different consistencies of clay soil:
+\cref{tab:cu-epsilon50} 列出了粘土不同软硬程度下的 $C_\text{u}$ 和 $\varepsilon_{50}$ 的对应值：
+
+\begin{table}
+  % \caption{Representative Values of Cu and ε50.}
+  \caption{$C_\text{u}$ 和 $\varepsilon_{50}$ 的对应值}
+  \label{tab:cu-epsilon50}
+  \input{tables/cu-epsilon50}
+\end{table}
+
+
+% \subsection{Description of the Model}
+\subsection{模型说明}
+% To conduct a pushover analysis, the pile was modeled using SAP2000 and divided into small beam elements, each one ft in length. For purpose of the analysis, a 40 ft length of pile was modeled for soft and medium density clays. The models show that this length is sufficient to provide a relative fixed condition in the lower portion of the pile. The pile tip is restrained from movements in all directions.
+为了进行 Pushover 分析，使用 SAP2000 对桩进行建模并将其分成小的梁单元，每个单元长 \qty{30}{cm}。为了分析的目的，为软粘土和中等密度粘土模拟了 \qty{12}{m} 长的桩。模型表明，该长度足以在桩的下部提供相对固定的条件。桩尖在所有方向上的运动都被约束。
+
+% The soil response to lateral deflection was modeled using nonlinear link elements placed every foot. The load deflection properties of the link elements were defined based on the p-y curve, described in \cref{chp:jointless-bridge}.
+每根桩的桩底设置了放置的非线性连接元件来模拟土壤对横向偏转的响应。 连接元件的负载偏转特性是根据 p-y 曲线定义的，如 \cref{chp:jointless-bridge} 中所述。
+
+% Material properties were assumed to be 36 ksi steel for the pile section. Non-linear beam elements with capability to develop hinges at both ends were used in the pushover analysis. The properties of these hinges are defined based on the orientation and the level of axial load on the pile.
+假定桩截面的材料特性为 36 ksi 钢。 在推覆分析中使用了能够在两端形成铰链的非线性梁单元。 这些铰链的属性是根据桩上的方向和轴向载荷水平定义的。
+
+% For a given axial load in the pile, soil condition, and steel section, a pushover analysis is then performed to obtain the maximum lateral displacement, capable of meeting the fatigue limit. Based on the assumptions made, the maximum moment that a pile can sustain without fatigue failure was established. This maximum moment is used in pushover analysis to establish the maximum lateral displacement. Results of the pushover analyses for various axial loads are shown in \cref{fig:displacement-capacity-soft,fig:displacement-capacity-medium}.
+对于给定的桩中轴向载荷、土壤条件和钢截面，然后执行推覆分析以获得能够满足疲劳极限的最大横向位移。 基于所做的假设，建立了桩在没有疲劳破坏的情况下可以承受的最大力矩。 此最大力矩用于 Pushover 分析以确定最大横向位移。 各种轴向载荷的 Pushover 分析结果显示在 \cref{fig:displacement-capacity-soft,fig:displacement-capacity-medium} 中。
+
+% \subsection{Results of the Analyses}
+\subsection{分析结果}
+
+% Using the described method and by performing pushover analyses, the maximum displacement that steel H piles with a specified minimum yield strength of 50 ksi can accommodate has been estimated and is shown in the following figures.
+使用所描述的方法并通过执行 Pushover 分析，具有 50 ksi 指定最小屈服强度的 H 型钢桩可以承受的最大位移已被估算，如\cref{fig:displacement-capacity-soft,fig:displacement-capacity-medium} 所示。
+
+\begin{figure}
+  % \includegraphics[width=\linewidth]{graphic-file}
+  % \caption{Lateral displacement capacity of compact HP sections in soft clay (c = 2.9ksi) (a) HP10x57 (b) HP12x84.}
+  \caption{软粘土中紧凑 HP 截面的横向位移能力}
+  \label{fig:displacement-capacity-soft}
+\end{figure}
+
+\begin{figure}
+  % \includegraphics[width=\linewidth]{graphic-file}
+  % \caption{Lateral displacement capacity of compact HP sections in medium clay (c = 5.8 ksi) (a) HP10x57 (b) HP12x84.}
+  \caption{中等硬度粘土中紧凑 HP 截面的横向位移能力}
+  \label{fig:displacement-capacity-medium}
+\end{figure}
+
+% These figures can be used to determine maximum lateral displacement that a pile can sustain, based on fatigue considerations.
+基于疲劳考虑，这些数字可用于确定桩可以承受的最大横向位移。
+
+% An interesting aspect of the data shown in these figures is that piles oriented with bending about the strong axis provide larger displacement (up to four times). Many DOTs orient the steel piles about weak axis of bending, based on the logic that it could provide larger lateral displacement. Results shown in the previous figures contradict this belief.
+这些图中显示的数据的一个有趣方面是，围绕强轴弯曲定向的桩提供更大的位移（高达四倍）。 许多 DOT 将钢桩围绕弱弯曲轴定位，基于这样的逻辑，它可以提供更大的横向位移。 前面图中显示的结果与这种信念相矛盾。

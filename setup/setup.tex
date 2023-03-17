@@ -1,0 +1,313 @@
+\usepackage[version=4]{mhchem}
+\usepackage{makeidx}
+\usepackage[acronym,symbols]{glossaries}
+% \renewcommand*{\indexname}{函数索引}
+\renewcommand*{\glossaryname}{词汇表}
+\renewcommand*{\acronymname}{缩略语}
+\makeindex
+\makeglossaries
+\setcounter{secnumdepth}{5}
+\ctexset{
+  subparagraph/number= \theparagraph\thinspace\alph{subparagraph},
+}
+% \setcounter{tocdepth}{2}
+\DeclareMathOperator{\erf}{erf}
+\renewcommand{\acrfullformat}[2]{#1（#2）}
+
+%%% ----------------------------------------------------------------------------
+%%% 自定义命令
+%%% ----------------------------------------------------------------------------
+\NewDocumentCommand{\bkn}{ s m }
+	{\IfBooleanTF#1{\textit{#2}}{《#2》}}
+\NewDocumentCommand{\msm}{}{ MSM\textsuperscript{\textregistered} }
+\NewDocumentCommand{\lrfd}{}{\acrshort*{lrfd}~规范}
+\NewDocumentCommand{\pontis}{}{Pontis\textsuperscript{\texttrademark}}
+\NewDocumentCommand{\fluorogold}{}{Fluorogold\textsuperscript{\textregistered}}
+
+\NewDocumentCommand\Microsoft{ o }
+  {\textsf{Microsoft}\textsuperscript{\textregistered}\IfNoValueF{#1}{\thinspace #1}}
+\NewDocumentCommand\Excel{o}{\textsf{Excel}\IfNoValueF{#1}{\thinspace #1}}
+%%% ----------------------------------------------------------------------------
+%%% 词汇表与缩略语
+%%% ----------------------------------------------------------------------------
+\newglossaryentry{element}{%
+  name = 构件,
+  sort = gou4jian4,
+  description = {单独的桥梁构件，例如主梁、底梁、纵梁、盖梁、支座、伸缩缝、栏杆等。结合起来，这些\gls{element}形成\gls{subsystem}和\gls{component}，然后构成桥梁\gls{system}}
+}
+\newglossaryentry{component}{%
+  name = 组件,
+  sort = zu3jian4,
+  description = {桥梁\gls{element}的组合，形成构成整个桥梁结构的三个主要部分之一。桥梁\gls{system}的三个主要\gls{component}是下部结构、上部结构和桥面系}
+}
+\newglossaryentry{subsystem}{%
+  name = 子系统,
+  sort = zi3xi4tong3,
+  description = {两个或多个桥梁\gls{element}的组合，共同作用以服务于共同的结构  目的。示例包括组合梁，它可以由梁、钢筋和混凝土组成}
+}
+\newglossaryentry{system}{%
+  name = 系统,
+  sort = xi4tong3,
+  description = {桥梁的三大\gls{component}——桥面系、下部结构和上部结构——结合在一起形成一个完整的桥梁}
+}
+
+\newglossaryentry{servicelife}{%
+  name = 使用寿命,
+  sort = shi3yong4shou4ming4,
+  description = {桥梁\gls{element}、\gls{component}、\gls{subsystem}或\gls{system}提供所需性能或功能水平以及任何所需水平的维修和/或维护的持续时间}
+}
+\newglossaryentry{targetdesignservicelife}{%
+  name = 目标设计使用寿命,
+  sort = mu4biao1she4ji4shi3yong4shou4ming4,
+  description = {预计桥梁\gls{element}、\gls{component}、\gls{subsystem}和\gls{system}将提供所需功能并在设计或改造阶段建立指定维护水平的持续时间}
+}
+\newglossaryentry{designlife}{%
+  name = 设计寿命,
+  sort = she4ji4shou4ming4,
+  description = {为确定可变作用的取值而取用的统计意义上的时间参数}
+}
+\newglossaryentry{life365}{%
+  name = {Life-365\textsuperscript{\texttrademark}},
+  description = {一款旨在估算混凝土配合比设计方案的使用寿命和生命周期成本的软件}
+}
+% \newglossaryentry{}{%
+%   name = ,
+%   sort = ,
+%   description = {}
+% }
+%%%-----------------------------------------------------------------------------
+%%% 翻译用词
+%%%-----------------------------------------------------------------------------
+\newglossaryentry{obsolescence}{%
+  name = 陈旧,
+  type = symbols,
+  description={}
+}
+\newglossaryentry{deterioration}{%
+  name = 劣化,
+  type = symbols,
+  description={}
+}
+\newglossaryentry{faulttree}{%
+  name = 故障树,
+  type = symbols,
+  description={}
+}
+\newglossaryentry{workzone}{%
+  name = 施工影响区,
+  type = symbols,
+  description={}
+}
+% \newglossaryentry{}{%
+%   name = ,
+%   type = symbols,
+%   description={}
+% }
+%%%-----------------------------------------------------------------------------
+%%% 缩略语
+%%%-----------------------------------------------------------------------------
+\newacronym[%
+  description={National Steel Bridge Alliance, 全国钢桥联盟}
+]{nsba}{NSBA}{全国钢桥联盟}
+
+\newacronym[%
+  description={Long-Term Bridge Performance, 长期桥梁性能}
+]{ltbp}{LTBP}{长期桥梁性能}
+
+\newacronym[%
+  description={Geosynthetic Reinforced Soil Integrated Bridge System, 土工合成材料加筋土整体桥梁系统}
+]{grsibs}{GRSIBS}{土工合成材料加筋土整体桥梁系统}
+
+\newacronym[%
+  description={Mechanically-Stabilized Earth, 机械稳定土}
+]{mse}{MSE}{机械稳定土}
+
+\newacronym[%
+  description={Peak Ground Acceleration, 地表加速度峰值}
+]{pga}{PGA}{地表加速度峰值}
+
+\newacronym[%
+  description={University of Nebraska–Lincoln, 内布拉斯加大学林肯分校}
+]{unl}{UNL}{内布拉斯加大学林肯分校}
+
+\newacronym[%
+  description={Simple for Dead Load and Continuous for Live Load, 恒载简支活载连续}
+]{sdcl}{SDCL}{恒载简支活载连续}
+
+\newacronym[%
+  description={United States Office of Management and Budege, 美国行政管理和预算局}
+]{omb}{OMB}{美国行政管理和预算局}
+
+\newacronym[%
+  description={Analytical Hierarchy Process, 层次分析法}
+]{ahp}{AHP}{层次分析法}
+
+\newacronym[%
+  description={National Institute of Standards and Technology, 美国国家标准技术研究院}
+]{nist}{NIST}{美国国家标准技术研究院}
+
+\newacronym[%
+  description={Average Daily Truck Traffic, 日平均卡车交通量}
+]{adtt}{ADTT}{日平均卡车交通量}
+
+\newacronym[%
+  description={Average Annual Daily Traffic, 年平均日交通量}
+]{aadt}{AADT}{年平均日交通量}
+
+\newacronym[%
+  description={vehicle operating costs, 车辆运营成本}
+]{voc}{VOC}{车辆运营成本}
+
+\newacronym[%
+  description={Present Value, 现值}
+]{pv}{PV}{现值}
+
+\newacronym[%
+  description={Net Present Value, 净现值}
+]{npv}{NPV}{净现值}
+
+\newacronym[%
+  description={Service Life, 使用寿命}
+]{sl}{SL}{使用寿命}
+
+\newacronym[%
+  description={Accelerated Bridge Construction, 快速桥梁建造}
+]{abc}{ABC}{快速桥梁建造}
+
+\newacronym[%
+  description={Benefit-Cost Analysis, 效益成本分析}
+]{bca}{BCA}{效益成本分析}
+
+\newacronym[
+  description={Allowable Stress Design, 容许应力设计}
+]{asd}{ASD}{容许应力设计}
+
+\newacronym[
+  description={Load Factor Design, 荷载系数设计}
+]{lfd}{LFD}{荷载系数设计}
+
+\newacronym[%
+  description = {Department of Transportation, 交通部}
+]{dot}{DOT}{交通部}
+
+\newacronym[
+  description={Polytetrafluorethylene, 聚四氟乙烯}
+]{ptfe}{PTFE}{聚四氟乙烯}
+
+\newacronym[%
+  description={Cotton Duck Pad，在美国采用的一种简易的弹性支座类型，姑且按原文直译为\acrlong{cdp}，感觉和国内使用的油毛毡类似}
+]{cdp}{CDP}{棉鸭垫}
+
+\newacronym[%
+  description={Alkali Aggregate Reaction, 碱骨料反应}
+]{aar}{AAR}{碱骨料反应}
+
+\newacronym[%
+  description={Cast-In-Place, 现场浇筑}
+]{cip}{CIP}{现场浇筑}
+
+\newacronym[%
+  description={American Society for Testing and Materials, 美国材料与试验学会}
+]{astm}{ASTM}{美国材料与试验学会}
+
+\newacronym[%
+  description={American Association of State Highway and Transportation Officials, 美国国家公路和运输官员协会}
+]{aashto}{AASHTO}{美国国家公路和运输官员协会}
+
+\newacronym[%
+  description={American Concrete Institute, 美国混凝土协会}
+]{aci}{ACI}{美国混凝土协会}
+
+\newacronym[%
+  description={Alkali-Carbonate Reaction, 碱—碳酸盐反应}
+]{acr}{ACR}{碱—碳酸盐反应}
+
+\newacronym[%
+  description={Air Entrained, 引气}
+]{ae}{AE}{引气}
+
+\newacronym[%
+  description={Normal Weight Concrete, 普通重量混凝土}
+]{nwc}{NWC}{普通重量混凝土}
+
+\newacronym[%
+  description={High Performance Concrete, 高性能混凝土}
+]{hpc}{HPC}{高性能混凝土}
+
+\newacronym[%
+  description={Ultra-High Performance Concrete, 超高性能混凝土}
+]{uhpc}{UHPC}{超高性能混凝土}
+
+\newacronym[%
+  description={Self-Consolidating Concrete, 自密实混凝土}
+]{scc}{SCC}{自密实混凝土}
+
+\newacronym[%
+  description={Normal Weight Aggregates, 普通重量骨料}
+]{nwa}{NWA}{普通重量骨料}
+
+\newacronym[%
+  description={LightWeight Aggregates, 轻骨料}
+]{lwa}{LWA}{轻骨料}
+
+\newacronym[%
+  description={Alkali-Silica Reaction, 碱硅反应}
+]{asr}{ASR}{碱硅反应}
+
+\newacronym[%
+  description={Federal Highway Administration, 联邦公路管理局}
+]{fhwa}{FHWA}{联邦公路管理局}
+
+\newacronym[%
+  description={ F\'ed\'eration Internationale du B\'eton (International Federation for Structural Concrete), 国际混凝土联合会}
+]{fib}{\textbf{\itshape fib}}{国际混凝土联合会}
+
+\newacronym[%
+  description={Ground Granulated Blast Furnace Slag, 研磨粒状高炉矿渣}
+]{ggbs}{GGBS}{研磨粒状高炉矿渣}
+
+\newacronym[%
+  description={Fiber Reinforced Polymer, 纤维增强复合材料}
+]{frp}{FRP}{纤维增强复合材料}
+
+\newacronym[%
+  description={International Organization for Standardization, 国际标准化组织}
+]{iso}{ISO}{国际标准化组织}
+
+\newacronym[%
+  description={Life Cycle Cost Analysis, 全生命周期成本分析}
+]{lcca}{LCCA}{全生命周期成本分析}
+
+\newacronym[%
+  description={Life Cycle Cost, 全生命周期成本}
+]{lcc}{LCC}{全生命周期成本}
+
+\newacronym[%
+  description={Load and Resistance Factor Design, 荷载—抗力系数设计}
+]{lrfd}{LRFD}{荷载—抗力系数设计}
+
+\newacronym[%
+  description={National Cooperative Highway Research Program, 国家公路合作研究计划}
+]{nchrp}{NCHRP}{国家公路合作研究计划}
+
+\newacronym[%
+  description={Ordinary Portland Cement, 普通波特兰水泥}
+]{opc}{OPC}{普通波特兰水泥}
+
+\newacronym[%
+  description={Supplementary Cementitious Material, 辅助胶凝材料}
+]{scm}{SCM}{辅助胶凝材料}
+
+\newacronym[%
+  description={Strategic Highway Research Program, 公路研究战略计划}
+]{shrp}{SHRP}{公路研究战略计划}
+
+\newacronym[%
+  description={Water-to-CeMent ratio, 水灰比}
+]{wcm}{WCM}{水灰比}
+
+\newacronym[%
+  description={High-Load Multi-Rotation, 大吨位多向转动}
+]{hlmr}{HLMR}{大吨位多向转动}
+
+%%% ----------------------------------------------------------------------------
