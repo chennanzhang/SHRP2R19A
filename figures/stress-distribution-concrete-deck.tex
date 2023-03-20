@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath,siunitx}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \draw[->](0,0)--(4,0)node[right]{$\sigma$};
+    \draw(0,0)--(0,6);
+    \draw[thin,densely dashed] (0,0.5)--++(0.8,0) node [at start,left]{板底};
+    \draw[thin,densely dashed] (0,5.5)--++(3.5,0) node [at start,left]{板顶};
+    \draw[thin](1.2,5.5)--++(0,0.2)node [above]{\qty{1.72}{MPa}};
+    \draw[ultra thick,densely dashed] (0.8,0.5)--(3.5,5.5) node [midway,right]{初始应力};
+    \draw[ultra thick] (0.4,0.5)..controls(1.3,3.0)and(1.6,4.0)..(1.7,5.5);
+    \node at (1.5,4.0) [left]{最终应力};
+    % \draw[thin,densely dashed] (-0.2,1)--++(6.7,0) node [at start,left]{$C_\text{f}$};
+    % \draw[thin,<->](1,2)--(6,2)node[midway,below]{使用寿命};
+    % % \draw[thin](1.05,3.55)--(3.0,3.2)--(5.0,2.0)--(6,1.0);
+    % \draw[ultra thick](1.05,3.55)..controls(3.0,3.2)and(5.4,2.5)..(6,1.0);
+    % \draw[ultra thick](6,1.0)..controls(6.2,0.5)and(6.25,0.1)..(6.3,0.0);
+  \end{tikzpicture}
+\end{document}

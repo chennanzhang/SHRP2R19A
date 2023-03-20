@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath,siunitx}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \draw[fill=cyan](-7,0)rectangle(7,0.8);
+    \draw[fill=gray](-7,0.8)rectangle(7,1.1);
+    \draw[thin] (-7,0)--++(240:0.3)--++(0.3,0)--cycle;
+    \draw[thin] (7,-0.15)circle(0.15);
+    \draw[densely dashed] (-7,0) parabola bend (0,-0.98) (7,0);
+    \draw[thin] (2,0)--(2,-0.9)node[midway,right]{$\delta$};
+    \draw[very thick,->] (2,2.0)--(2,1.1)node[midway,right]{$P$};
+    \draw[thin](-7,-0.4)--(-7,-1.6)(7,-0.4)--(7,-1.6)(2,-1.0)--(2,-1.6);
+    \draw[<->](-7,-1.4)--(2,-1.4)node[midway,above]{$L_1$};
+    \draw[<->](2,-1.4)--(7,-1.4)node[midway,above]{$L_2$};
+    \node at (-7,1.2)[above right]{组合梁};
+  \end{tikzpicture}
+\end{document}

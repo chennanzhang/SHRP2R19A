@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath,siunitx}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \draw[fill=cyan](-7,0)rectangle(7,0.8);
+    % \draw[fill=gray](-7,0.8)rectangle(7,1.1);
+    \draw[thin] (-7,0)--++(240:0.3)--++(0.3,0)--cycle;
+    \draw[thin] (7,-0.15)circle(0.15);
+    \draw[densely dashed] (-7,0.8) parabola bend (0,1.78) (7,0.8);
+    \draw[thin] (2,0.8)--(2,1.7)node[midway,right]{$\delta$};
+    \draw[very thick,->] (2,-1.0)--(2,0)node[midway,right]{$P$};
+    \draw[thin](-7,0.9)--(-7,2.5)(7,0.9)--(7,2.5)(2,1.8)--(2,2.5);
+    \draw[<->](-7,2.2)--(2,2.2)node[midway,above]{$L_1$};
+    \draw[<->](2,2.2)--(7,2.2)node[midway,above]{$L_2$};
+    \node at (-7,-0.3)[below right]{裸钢梁};
+  \end{tikzpicture}
+\end{document}

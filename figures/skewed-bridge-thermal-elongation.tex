@@ -1,0 +1,37 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \draw[thin,densely dash dot] (-1,0)--(11,0);
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (70:2);
+    \coordinate (B) at (250:2);
+    \coordinate (C) at (-2,0);
+    \coordinate (D) at (-1.7,0);
+    \coordinate (E) at ([xshift=-0.3cm]160:0.8);
+    \coordinate (F) at ([xshift=10.3cm]-20:0.8);
+    \coordinate (G) at ([xshift=10cm]A);
+    \draw[thick] (0,0)--(A)--++(10,0)--++(250:4)--++(-10,0)--cycle;
+    \draw[densely dashed] (A)--++(-0.3,0)--++(250:4)--++(10.6,0)--++(70:4)--cycle;
+    \draw[thin](-0.3,0)--(-0.3,3)(10.3,0)--(10.3,3);
+    \draw[<->,thin](-0.3,2.8)--(10.3,2.8)node[midway,above]{$L$};
+    \draw[thin](A-|C)--([xshift=-0.4cm]A)(B-|C)--([xshift=-0.4cm]B);
+    \draw[thin,<->] (B-|D)--(A-|D) node [midway,above,sloped]{$w$};
+    \draw[thick,<-] (-0.3,0)--(E);
+    \draw[thick,->] (E)--(E|-O);
+    \draw[thick,->] (E|-O)--(-0.3,0);
+    \draw[thick,<-] (10.3,0)--(F);
+    \draw[thick,->] (F)--(F|-O);
+    \draw[thick,->] (F|-O)--(10.3,0);
+    \draw[thin]([xshift=10cm,yshift=-0.1cm]B)--++(0,-0.4)([xshift=10.3cm,yshift=-0.1cm]B)--++(0,-0.4);
+    \draw[<->]([xshift=10cm,yshift=-0.4cm]B)--++(0.3,0)node[right]{$\Delta l$ 热膨胀引起梁端变形};
+    \draw[thin]([shift=(160:0.4)]F)--++(-70:0.5)node[below]{\parbox{5em}{热膨胀引起被动土压力}};
+    \draw[thin] ([shift=(70:0.1)]G)--++(70:0.5);
+    \draw[thin] ([shift=(90:0.1)]G)--++(90:0.5);
+    \draw[->]([shift=(120:0.45)]G)arc(120:90:0.45);
+    \draw[->]([shift=(40:0.45)]G)arc(40:70:0.45);
+    \node at ([shift=(75:0.45)]G)[above]{$\theta$};
+  \end{tikzpicture}
+\end{document}

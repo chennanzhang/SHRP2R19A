@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath,siunitx}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \draw[fill=cyan](-7,0)rectangle(7,0.8);
+    \draw[thin] (-7,0)--++(240:0.3)--++(0.3,0)--cycle;
+    \draw[thin] (7,-0.15)circle(0.15);
+    \draw[thin] (2,-0.15)circle(0.15);
+    \node at (-7,-0.3) [below] {$R_1$};
+    \node at (2,-0.3) [below] {$R_2$};
+    \node at (7,-0.3) [below] {$R_3$};
+    \draw[thin](-7,1.8)--(-7,2.5)(7,0.9)--(7,2.5)(2,1.8)--(2,2.5);
+    \foreach \x in {-7,-6.5,...,2}
+      { \draw [thick,->] (\x,1.5)--++(0,-0.7);}
+    \draw[thick] (-7,1.5)--(2,1.5);
+    \draw[<->](-7,2.2)--(2,2.2)node[midway,above]{$L_1$};
+    \draw[<->](2,2.2)--(7,2.2)node[midway,above]{$L_2$};
+    \node at (-6.8,-0.3)[below right]{裸钢梁};
+  \end{tikzpicture}
+\end{document}
