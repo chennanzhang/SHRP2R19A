@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows,patterns}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \fill[pattern=north east lines](-0.2,0)rectangle++(0.4,-0.15);
+    \draw[thin] (-0.2,0)--++(0.4,0);
+    \draw[thick] (0,0)..controls (0,1)and(0.5,2)..(0.5,3);
+    \filldraw[pattern=north east lines](0.3,3)rectangle(0.7,3.6);
+    \draw(-2,3.3)--(2,3.3);
+    \draw[densely dashed] (0,0)--(0,3.3);
+    \draw[thin](0.2,3.0)--(-0.7,3.0)(-0.3,0)--(-0.7,0);
+    \draw[thin,<->](-0.6,0)--(-0.6,3.0)node[sloped,midway,above]{立柱高度};
+    \fill[ball color=blue](0.5,2.8)circle(2pt);
+    \fill[ball color=blue](0,0.2)circle(2pt);
+    \draw[thin,<-](0.6,2.75)--++(-45:0.5)node[right]{塑性铰};
+    % \draw[thin,<-](4.8,-1.5)--++(-45:0.5)node[right]{桥墩立柱};
+    % \draw[thin,<-](9,0.2)--++(150:0.5)node[left]{主梁};
+    % \draw[thin,->](0,0.5)--++(0:1.5)node[midway,above]{行车方向};
+  \end{tikzpicture}
+\end{document}

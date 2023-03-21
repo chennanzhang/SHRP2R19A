@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{mindmap}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \path[mindmap,concept color=red!50!black,text=white]
+      node [concept] {\parbox{4em}{净现值的概率分布}}
+      [counterclockwise from=30]
+      child [concept color =green!50!black]
+        { node [concept] {维修成本的不确定性} }
+      child [concept color =blue]
+        { node [concept] {时间安排的不确定性} }
+      child [concept color =brown]
+        { node [concept] {建设成本的不确定性} }
+      ;
+  \end{tikzpicture}
+\end{document}

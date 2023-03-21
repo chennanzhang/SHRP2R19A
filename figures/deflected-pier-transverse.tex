@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows,patterns}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \fill[pattern=north east lines](-0.2,0)rectangle++(0.4,-0.15);
+    \draw[thin] (-0.2,0)--++(0.4,0);
+    \filldraw[pattern=north east lines](0.5,3.6)--++(250:0.4)--++(-20:0.8)--++(70:0.4)--++(160:0.8);
+    \coordinate (A) at (0.5,3.6);
+    \coordinate (E) at (-0.7,3.6);
+    \coordinate (F) at ([xshift=1mm]E);
+    \coordinate (B) at ([shift=(250:0.4)]A);
+    \coordinate (D) at ([shift=(250:0.2)]A);
+    \coordinate (C) at ([shift=(-20:0.4)]B);
+    \draw[thick] (0,0)..controls (0,1)and([shift=(250:1)]C)..(C);
+    \draw(-2,3.3)--(2,3.3);
+    \draw[densely dashed] (0,0)--(0,3.3);
+    \draw[thin]([xshift=-0.1cm]D)--(D-|E)(-0.3,0)--(-0.7,0);
+    \draw[thin,<->](-0.6,0)--(D-|F)node[sloped,midway,above]{桥墩高度};
+    \fill[ball color=blue](0,0.2)circle(2pt);
+    \draw[thin,<-](0.1,0.25)--++(45:0.5)node[right]{塑性铰};
+    % \draw[thin,<-](4.8,-1.5)--++(-45:0.5)node[right]{桥墩立柱};
+    % \draw[thin,<-](9,0.2)--++(150:0.5)node[left]{主梁};
+    % \draw[thin,->](0,0.5)--++(0:1.5)node[midway,above]{行车方向};
+  \end{tikzpicture}
+\end{document}

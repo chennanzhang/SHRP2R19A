@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,pgfplots}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\pgfplotsset{width=5.5cm,compat=1.18}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \begin{axis}[
+      % yticklabel pos=upper,
+      ymin=0,ymax=0.08,xmin=0,xmax=35,ymajorgrids,ytick distance=0.02,scaled y ticks=false,xtick distance=5,
+      yticklabel style={/pgf/number format/.cd,fixed,precision=2},
+      xlabel={平均分布}
+      ]
+      \addplot [red!50!black,very thick] coordinates
+        {(5,0) (5,0.04)(30,0.04) (30,0)};
+      \end{axis}
+  \end{tikzpicture}
+\end{document}

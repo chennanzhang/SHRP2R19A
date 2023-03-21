@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,pgfplots}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\pgfplotsset{width=5.5cm,compat=1.18}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \begin{axis}[
+      % yticklabel pos=upper,
+      ymin=0,ymax=0.25,xmin=0,xmax=20,ymajorgrids,yminorgrids,ytick distance=0.05,scaled y ticks=false,
+      yticklabel style={/pgf/number format/.cd,fixed,precision=2},
+      xlabel={正态分布}
+      ]
+      % density of Normal distribution:
+      \newcommand\MU{10}
+      \newcommand\SIGMA{2}
+      \addplot [red!50!black,domain=\MU-4.5*\SIGMA:\MU+4.5*\SIGMA,samples=201,very thick]
+      {exp(-(x-\MU)^2 / 2 / \SIGMA^2) / (\SIGMA * sqrt(2*pi))};
+      \end{axis}
+  \end{tikzpicture}
+\end{document}

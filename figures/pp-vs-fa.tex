@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,pgfplots,amsmath,amssymb,amsfonts,siunitx}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\pgfplotsset{width=8cm,compat=1.18}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \begin{axis}[
+      % yticklabel pos=upper,
+      ymin=0,ymax=1.5,xmin=0,xmax=65,
+      % ymajorgrids,
+      ytick distance=0.4,scaled y ticks=false,
+      xtick distance=10,
+      yticklabel style={/pgf/number format/.cd,fixed,precision=2},
+      xlabel={斜交角度 $\theta$},
+      ylabel={$\dfrac{F_\text{a}}{P_\text{p}}$},
+      ylabel style={rotate=-90},
+      nodes near coords,
+      nodes near coords align=left,
+      nodes near coords style={/pgf/number format/.cd,fixed,precision=3}
+      % title={概率分布}
+      ]
+      \addplot+  [thick, smooth, mark=ball] coordinates
+        {(19,-0.02) (30,0.213) (40,0.475) (50,0.828) (60,1.368)};
+      % \addplot [scatter, mark=ball] coordinates
+        % {(30,0.213) (40,0.475) (50,0.828) (60,1.368)};
+      % \legend{$l_1$,$l_2$}
+      \node at (axis cs:40,1.2) {$\tan \theta - \tan \delta$};
+      \node at (axis cs:40,1.1) {$\delta = \ang{20}$};
+      \end{axis}
+  \end{tikzpicture}
+\end{document}

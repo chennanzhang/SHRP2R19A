@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,pgfplots,amsmath,amssymb,amsfonts,siunitx}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\pgfplotsset{width=8cm,compat=1.18}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \begin{axis}[
+      % yticklabel pos=upper,
+      ymin=0,ymax=1.2,xmin=0,xmax=70,
+      % ymajorgrids,
+      ytick distance=0.2,scaled y ticks=false,
+      xtick distance=10,
+      yticklabel style={/pgf/number format/.cd,fixed,precision=2},
+      xlabel={斜交角度 $\theta$},
+      ylabel={$\dfrac{\Delta l_\text{n}}{\Delta l}$},
+      ylabel style={rotate=-90},
+      nodes near coords,
+      nodes near coords align=above right,
+      nodes near coords style={/pgf/number format/.cd,fixed,precision=2}
+      % title={概率分布}
+      ]
+      \addplot+  [thick, smooth, mark=ball] coordinates
+        {(-20,0.94)(-0.01,1.0) (20,0.94) (30,0.87) (40,0.77) (50,0.64) (60,0.5) (70,0.34)};
+      % \node at (axis cs:40,1.2) {$\tan \theta - \tan \delta$};
+      % \node at (axis cs:40,1.1) {$\delta = \ang{20}$};
+      \end{axis}
+      \begin{scope}[xshift=10cm,yshift=3cm]
+        % \draw(0,0)circle(1);
+        \draw[thin,densely dash dot] (0,-2)--(0,1);
+        \coordinate (A) at (150:2);
+        \coordinate (B) at ([yshift=-1cm]A);
+        \coordinate (C) at (-30:2);
+        \draw[thick](B)--(A)--++(-30:4)--++(0,-1);
+        \draw[densely dashed](A)--++(0,0.4)--++(-30:4)--++(0,-0.4);
+        \draw[thin]([shift=(150:0.2)]B)--++(-30:2)--++(-90:0.2)--++(30:0.4)--++(-90:0.2)--++(-30:2);
+        \draw[thin] ([shift=(150:0.1)]A)--++(150:1);
+        \draw[thin] ([shift=(180:0.1)]A)--++(180:1);
+        \draw[thin,<->]([shift=(180:0.9)]A)arc(180:150:0.9)node[midway,left]{$\theta$};
+        \draw[thin,<->](-30:1)--++(60:0.3464)node[right]{$\Delta l_\text{n}=\Delta l \cos\theta $};
+        \draw[thin] ([xshift=0.1cm]C)--++(0.5,0)([xshift=0.1cm,yshift=0.4cm]C)--++(0.5,0);
+        \draw[thin,<->]([xshift=0.3cm]C)--++(0,0.4)node[midway,right]{$\Delta l$};
+      \end{scope}
+  \end{tikzpicture}
+\end{document}

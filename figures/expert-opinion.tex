@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,pgfplots}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{shapes.arrows}
+\pgfplotsset{width=5.5cm,compat=1.18}
+\begin{document}\footnotesize
+  \begin{tikzpicture}
+    \node(expert)at (-3.5,-0.6)[inner sep=0pt,anchor = south east]{\includegraphics[height=4.2cm]{expert.png}};
+    \node at ([xshift=1.2cm]expert.east) [single arrow,draw]{专家意见启发};
+    \begin{axis}[
+      % yticklabel pos=upper,
+      ymin=0,ymax=0.1,xmin=0,xmax=30,ymajorgrids,ytick distance=0.02,scaled y ticks=false,xtick distance=5,
+      yticklabel style={/pgf/number format/.cd,fixed,precision=2},
+      xlabel={模型参数},
+      ylabel={概率密度},
+      title={概率分布}
+      ]
+      \addplot [red!50!black,very thick] coordinates
+        {(0,0) (10,0.08) (25,0)};
+      \end{axis}
+  \end{tikzpicture}
+\end{document}

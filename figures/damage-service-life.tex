@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows}
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \draw[->](0,0)--(7,0)node[at end, below left]{时间};
+    \draw[->](0,0)--(0,-4)node[right]{劣化程度};
+    \draw[thick,->](0,0)--(4,-0.2)--(6,-3.6);
+    \fill(4,-0.2)circle(2pt);
+    \draw[thin](4,0.2)--++(0,0.5);
+    \fill(0,0.4)circle(1pt);
+    \draw[thin,->](0,0.4)--++(4,0)node[midway,above]{腐蚀开启};
+    \draw[thin](4,0.4)--++(3,0)node[midway,above]{腐蚀传播};
+    \draw[thin](0,-1.9)--(5,-1.9)node[at start,above right]{可接受的极限} (5,-2.0)--++(0,-0.5);
+    \draw[thin,<->](0,-2.4)--(5,-2.4)node[midway,above]{使用寿命};
+  \end{tikzpicture}
+\end{document}

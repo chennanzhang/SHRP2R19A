@@ -37,18 +37,20 @@
 \begin{document}\footnotesize
   \begin{tikzpicture}
     \coordinate (A) at (0,-0.9);
-    \node (root) [comp] {上部结构组件};
-    \node (super) at ([xshift=-2.5cm,yshift=-1.2cm]root.south)[subsys] {上部结构子系统（钢/混凝土）};
-    \coordinate (B) at ([yshift=-1cm]super.south);
-    \node (bearing) [subsys,right=3cm of super] {支座};
-    \node (girder) at ([xshift=-2cm]B) [ele] {梁};
-    \node (arch) at ([xshift=2cm]B) [ele] {拱};
-    \node (truss) [ele,below=3mm of girder] {桁架};
-    \node (cable) [ele,below=3mm of arch] {索支承};
+    \node (root) [comp] {下部结构组件};
+    \node (pier) at ([xshift=-2.5cm,yshift=-1.2cm]root.south)[subsys] {桥墩子系统};
+    \coordinate (B) at ([xshift=-1cm]pier.south);
+    \node (abutment) at ([xshift=2.5cm,yshift=-1.2cm]root.south)[subsys]{桥台子系统};
+    \coordinate (C) at ([xshift=-1cm]abutment.south);
+    \node (P) at ([xshift=1cm,yshift=-1cm]pier.south) [ele] {
+      \parbox{8em}{盖梁、立柱\\ 承台/桩帽 \\ 钻孔、桩基础}
+    };
+    \node (AB) at ([xshift=1cm,yshift=-1.4cm]abutment.south) [ele] {
+      \parbox{8em}{背墙、帽梁\\ 前墙、翼墙\\ 承台/桩帽 \\ 钻孔、桩基础 \\ 加筋土}
+    };
     \draw(root)--(root|-A);
-    \draw(super)--(super|-A)--(A-|bearing)--(bearing);
-    \draw(super)--(super|-truss);
-    \draw(girder)--(arch);
-    \draw(truss)--(cable);
+    \draw(pier)--(pier|-A)--(A-|abutment)--(abutment);
+    \draw(B)--(B|-P)--(P);
+    \draw(C)--(C|-AB)--(AB);
   \end{tikzpicture}
 \end{document}
