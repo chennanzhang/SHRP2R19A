@@ -11,6 +11,7 @@
 
 % \section{Bearing Types}
 \section{支座类型}
+\label{sec:bearing-types}
 % Many different bearing types have been developed, primarily to provide efficient, economical ways to accommodate various levels of load and movement. Each has certain advantages and potential disadvantages. The following table identifies commonly used bridge bearing types that will be discussed further in this chapter:
 为了能以高效、经济的方式来适应各种量级的荷载和变位，许多不同类型的支座被开发出来。每种类型都有一定的优点和潜在的缺点。\cref{tab:bearing-types} 列出了本章将进一步讨论的常用桥梁支座类型：
 
@@ -170,13 +171,13 @@
 
 % \section{Factors Influencing Service Life of Bearings}
 \section{影响支座使用寿命的因素}
-
+\label{sec:factor-influence-sl-bearing}
 % This section discusses various factors influencing the service life of bearings utilizing a fault tree analysis approach that first identifies service life issues that generally pertain to all bearing types. This is followed by specific discussions of service life issues pertaining to individual bearing types.
 本节使用\gls*{faulttree}分析方法讨论影响支座使用寿命的各种因素，该方法首先确定通常与所有支座类型相关的使用寿命问题。 随后具体讨论了与各个支座类型有关的使用寿命问题。
 
 % \subsection{Factors Affecting Service Life of All Bearing Types—Fault Tree Analysis}
 \subsection{影响所有支座类型使用寿命的因素——\glsentrytext{faulttree}分析}
-
+\label{subsec:factors-affecting-bearing}
 % A general description of the fault tree analysis approach for identifying factors affecting service life is given in \cref{chp:general-frame} on general framework. \cref{chp:bridge-system-selection} on system selection, further applies the fault tree analysis to identify factors affecting service life of overall bridge systems, which includes deck, superstructure, and substructure components. This section applies specific parts of the fault tree analysis to identify service life factors that apply to bearings.
 在\cref{chp:general-frame}\nameref{chp:general-frame}中给出了用于识别影响\gls*{servicelife}的因素的\gls*{faulttree}分析方法的一般描述。\cref{chp:bridge-system-selection}在系统选择方面，进一步应用\gls*{faulttree}分析来确定影响整个桥梁\gls*{system}\gls*{servicelife}的因素，包括桥面系、上部结构和下部结构\gls*{component}。 本节应用\gls*{faulttree}分析的特定部分来确定适用于支座的\gls*{servicelife}因素。
 
@@ -359,27 +360,17 @@ factors include:
 \end{itemize}
 
 \subparagraph{Fabrication/Manufacturing}
-Material or fabrication flaws can lead to performance failure and reduced service life. Proper quality assurance
-(QA) and quality control (QC) procedures in accordance with current AASHTO LRFD Construction Specifications
-must be implemented in the fabrication or manufacturing of bridge bearings to ensure that the completed bearings
-meet specifications and provide required levels of performance (AASHTO 2010). See Section 10.4.1.2.3b for
-additional discussion.
+Material or fabrication flaws can lead to performance failure and reduced service life. Proper quality assurance (QA) and quality control (QC) procedures in accordance with current AASHTO LRFD Construction Specifications must be implemented in the fabrication or manufacturing of bridge bearings to ensure that the completed bearings meet specifications and provide required levels of performance (AASHTO 2010). See \cref{subpar:fabrication-related} for additional discussion.
 
 \subparagraph{Construction}
-Production/operation defects at the construction stage can be due to either element damage or improper
-placement. Protective care must be taken during field construction to prevent damage or contamination to sensitive
-bearing parts such as sliding surfaces or elastomeric pads or discs. Bearings must be set in the field at proper
-positions to accommodate installation temperatures and rotations.
+Production/operation defects at the construction stage can be due to either element damage or improper placement. Protective care must be taken during field construction to prevent damage or contamination to sensitive bearing parts such as sliding surfaces or elastomeric pads or discs. Bearings must be set in the field at proper positions to accommodate installation temperatures and rotations.
 
 \subparagraph{Maintenance}
-Lack of or inadequate bearing maintenance can also lead to reduced service life. Issues typically relate to lack of
-cleaning, which results in debris build up below deck expansion joints, and steel element corrosion. Other types of
-maintenance related issues are discussed later for specific bearing types. Dirt and debris build up prevents proper
-bearing movement and rotation. Debris build up also retains and holds moisture and salt against exposed steel
-elements, which leads to corrosion if not cleaned.
+Lack of or inadequate bearing maintenance can also lead to reduced service life. Issues typically relate to lack of cleaning, which results in debris build up below deck expansion joints, and steel element corrosion. Other types of maintenance related issues are discussed later for specific bearing types. Dirt and debris build up prevents proper bearing movement and rotation. Debris build up also retains and holds moisture and salt against exposed steel elements, which leads to corrosion if not cleaned.
 
 \subsection{Factors Affecting Service Life Unique To Each Bearing Type}
-This section looks at specific service life issues pertaining to bearing types described in Section 10.2 and addressed within the general fault tree categories described in Section 10.3.1.
+This section looks at specific service life issues pertaining to bearing types described in \cref{sec:bearing-types} and addressed within the general fault tree categories described in \cref{subsec:factors-affecting-bearing}.
+
 \subsubsection{Steel-Reinforced Elastomeric (SRE) Bearings}
 Steel reinforced elastomeric bearings have been in service in the United States for over 50 years, and longer elsewhere in the world, with very good results. They are typically very robust, and of all bearing types they likely have the best chance for achieving a service life greater than 100 years. When properly designed, manufactured, and installed, there is very little that can go wrong, and long-term maintenance requirements are minimal. In rare instances however, certain problems have been observed, most often associated with production/operation defects relating to design and manufacturing.
 
@@ -668,17 +659,9 @@ susceptible to freezing in position along with older type metal sliding plates. 
 develop their own provisions for contraction and expansion, such as pier cap cracking or rocking of piers or
 abutments.
 
-Dirt and debris accumulation has caused some rocker-type expansion bearings to move beyond their limits and
-actually roll over causing the superstructure to drop several in. or more. Figure 10.16 illustrates a ratcheting effect
-reported by Modjeski and Masters in 2008, whereby rocker bearings at one pier on the Birmingham Bridge in Pittsburgh, Pennsylvania tipped over because of corrosion and debris accumulation. The rockers had an initial lean,
-and a leaking expansion joint above caused corrosion and increasing accumulation of debris on the bearings and
-under one side of the rockers. A ratcheting effect followed whereby additional debris and corrosion material kept
-accumulating under the rockers causing additional and increasing tilt. This continued until a lateral force or kick
-developed against the pier cap, which caused the pier to move just enough to initiate the final tipping of the rocker
-bearings.
+Dirt and debris accumulation has caused some rocker-type expansion bearings to move beyond their limits and actually roll over causing the superstructure to drop several in. or more. \cref{fig:ratchet-debris-corrosion} illustrates a ratcheting effect reported by Modjeski and Masters in 2008, whereby rocker bearings at one pier on the Birmingham Bridge in Pittsburgh, Pennsylvania tipped over because of corrosion and debris accumulation. The rockers had an initial lean, and a leaking expansion joint above caused corrosion and increasing accumulation of debris on the bearings and under one side of the rockers. A ratcheting effect followed whereby additional debris and corrosion material kept accumulating under the rockers causing additional and increasing tilt. This continued until a lateral force or kick developed against the pier cap, which caused the pier to move just enough to initiate the final tipping of the rocker bearings.
 
-Steel rocker bearings have also performed poorly in seismic events and have been replaced as part of seismic
-retrofit in many instances.
+Steel rocker bearings have also performed poorly in seismic events and have been replaced as part of seismic retrofit in many instances.
 
 \begin{figure}
   % \includegraphics[width=\linewidth]{graphic-file}
@@ -693,18 +676,13 @@ thermal environments where bearings are highly susceptible to roadway drainage, 
 to prevent buildup of deleterious materials is essential.
 
 \section{Options for Enhancing Service Life of Bearings}
-This section presents available options for mitigating various bearing service life issues that were identified in
-Section 10.3. A procedure to select the optimal bearing type for given loads, movements, and environmental
-conditions is presented in Section 10.5.
+\label{sec:option-enhance-sl-bearings}
+This section presents available options for mitigating various bearing service life issues that were identified in \cref{sec:factor-influence-sl-bearing}. A procedure to select the optimal bearing type for given loads, movements, and environmental
+conditions is presented in \cref{sec:strategies-bearing-selection}.
 
-Options for enhancing service life of bearings are presented in a way that addresses the issues discussed in the
-fault tree analysis and the specific categories and sub-categories of deficiencies that were shown to cause damage or
-deterioration. As previously illustrated, bearing deficiencies can be either related to bridge system deficiencies or
-related directly to bearing element deficiencies. Deficiencies can then be attributed to those caused by loads, natural
-or man-made hazards, or production/operation defects
+Options for enhancing service life of bearings are presented in a way that addresses the issues discussed in the fault tree analysis and the specific categories and sub-categories of deficiencies that were shown to cause damage or deterioration. As previously illustrated, bearing deficiencies can be either related to bridge system deficiencies or related directly to bearing element deficiencies. Deficiencies can then be attributed to those caused by loads, natural or man-made hazards, or production/operation defects
 
-In the discussion of available options for enhancing service life of individual bearing types, the following general
-solution categories are included and addressed as applicable:
+In the discussion of available options for enhancing service life of individual bearing types, the following general solution categories are included and addressed as applicable:
 
 \begin{itemize}
   \item Avoidance eliminates or bypasses a particular service life issue. This is a primary consideration, and should
@@ -716,15 +694,11 @@ solution categories are included and addressed as applicable:
   eventually need to be replaced.
 \end{itemize}
 
-In many instances, the need to provide capabilities and details for easy bearing replacement may still be a
-necessary consideration because of uncertainties regarding loads, hazards, or production/operation defects that can
-cause premature service life issues.
+In many instances, the need to provide capabilities and details for easy bearing replacement may still be a necessary consideration because of uncertainties regarding loads, hazards, or production/operation defects that can cause premature service life issues.
 
 \subsection{General Options for All Bearing Types}
 \subsubsection{Solutions for Deficiencies of System-Related Items}
-The following table summarizes solutions for various service life issues identified in Section 10.3.1.1, and briefly
-identifies what each solution provides and what other considerations may still be needed. System-related issues were primarily due to production/operational defects and, more specifically, due to design and details of components
-within the overall bridge system. Further discussion relating to each issue follows this table.
+The following table summarizes solutions for various service life issues identified in Section 10.3.1.1, and briefly identifies what each solution provides and what other considerations may still be needed. System-related issues were primarily due to production/operational defects and, more specifically, due to design and details of components within the overall bridge system. Further discussion relating to each issue follows this table.
 
 \begin{table}
   \caption{Solutions for Service Life Problems–All Bearing Types.}
@@ -863,6 +837,7 @@ performance protective coatings (galvanizing or metalizing).
 \end{itemize}
 
 \subparagraph{Fabrication/Manufacturing Related}
+\label{subpar:fabrication-related}
 Proper QA/QC procedures in the fabrication or manufacturing of bridge bearings are essential to assure that the
 completed bearings meet specifications and provide the required levels of performance. Current AASHTO LRFD Construction Specifications provide minimum requirements for packaging, handling and storage, fabrication
 tolerances, materials and general performance. Testing requirements include: material certification tests, material
@@ -1165,7 +1140,9 @@ that can cause freezing and reduce rotation and movement capacity. Proper field 
 steel bearings with zinc-rich paint systems, followed by maintenance touchup as required, will provide extended
 service life. Lubricating pins and knuckles that have metal to metal contact can also help prevent freezing.
 
-\section{Strategies for Bearing Selection and Design}
+% \section{Strategies for Bearing Selection and Design}
+\section{支座选择和设计的策略}
+\label{sec:strategies-bearing-selection}
 \subsection{Available Service Life Design Philosophies}
 Currently there are no deterioration models for predicting the service life of bearings. As a result, measures
 should be taken to avoid the deterioration and provide long service life.
@@ -1209,26 +1186,14 @@ The process for selecting the proper bearing type involves four main steps:
   \label{fig:flow-chart-bearing-selection}
 \end{figure}
 
-When considering service life, the demand and options steps need to address additional issues beyond loads and
-movements, and consider all hazards that can have adverse effects. Figure 10.19 illustrates the overall selection
-process. When considering multiple options, the selection process should take into account the various levels of
-bearing performance, the initial cost and maintenance requirements, and the reliability of the bearings and their
-potential to achieve long service life.
+When considering service life, the demand and options steps need to address additional issues beyond loads and movements, and consider all hazards that can have adverse effects. \cref{fig:flow-chart-bearing-selection} illustrates the overall selection process. When considering multiple options, the selection process should take into account the various levels of bearing performance, the initial cost and maintenance requirements, and the reliability of the bearings and their potential to achieve long service life.
 
 
 
 \subsubsection{Detailed Steps in Selection Process}
 
 \paragraph*{Step 1. Identify Demand Requirements}
-The demand step identifies the desired service life and what requirements the bearings must accommodate
-from an operational and environmental standpoint throughout their service life. Operational requirements have
-typically included proper determination of gravity loads, rotations, and translational movements. However, for
-service life, this needs to further consider cyclic movements and cumulative movement due to truck load, which
-can have a more severe effect on service life in some cases. Environmental demand has typically involved
-determination of thermal climate and corresponding temperature ranges. But for service life, this also needs to
-identify specific local environmental hazards and their consequences that need to be avoided or mitigated in the
-design. Table 10.10 provides a format for identifying various demand requirements. The following steps
-summarize the process:
+The demand step identifies the desired service life and what requirements the bearings must accommodate from an operational and environmental standpoint throughout their service life. Operational requirements have typically included proper determination of gravity loads, rotations, and translational movements. However, for service life, this needs to further consider cyclic movements and cumulative movement due to truck load, which can have a more severe effect on service life in some cases. Environmental demand has typically involved determination of thermal climate and corresponding temperature ranges. But for service life, this also needs to identify specific local environmental hazards and their consequences that need to be avoided or mitigated in the design. \cref{tab:requirements-bearing-selection} provides a format for identifying various demand requirements. The following steps summarize the process:
 
 \begin{enumerate}[label=步骤 1.\arabic*,itemindent=4em]
   \item Determine operational and service life requirements:
@@ -1287,20 +1252,11 @@ CDPs with greater load capacity can be a suitable alternative for plain elastome
 demand is light; however, when movement demand increases, CDP will require sliding surfaces, which affect
 service life.
 
-When loads and rotational demands increase, SRE bearings will have to be evaluated against HLMR pot or
-disc bearings for accommodating the required loads. As long as an SRE bearing can be designed for the combined
-load, movement, and rotation, it will also have the greatest potential for achieving the desired service life. Greater
-movement capacity can be provided with SRE bearings by combining them with sliding surfaces, but this
-typically would be considered only where movement demand is large and vertical loads are relatively light, such
-as at the ends of a long, multi-span continuous unit.
+When loads and rotational demands increase, SRE bearings will have to be evaluated against HLMR pot or disc bearings for accommodating the required loads. As long as an SRE bearing can be designed for the combined load, movement, and rotation, it will also have the greatest potential for achieving the desired service life. Greater movement capacity can be provided with SRE bearings by combining them with sliding surfaces, but this typically would be considered only where movement demand is large and vertical loads are relatively light, such as at the ends of a long, multi-span continuous unit.
 
-When load demand is beyond the capacity of SRE bearings, other bearings such as HLMR pot, disc, or
-spherical must be considered. Fabricated steel bearings can also be considered, but cost and service life
-mitigation issues have to be weighed.
+When load demand is beyond the capacity of SRE bearings, other bearings such as HLMR pot, disc, or spherical must be considered. Fabricated steel bearings can also be considered, but cost and service life mitigation issues have to be weighed.
 
-The preliminary design step involves performing preliminary design in accordance with AASHTO
-specifications to determine if potential bearing type(s) can actually provide the required capacities depending on
-actual bridge layout, and to evaluate further size and geometric requirements.
+The preliminary design step involves performing preliminary design in accordance with AASHTO specifications to determine if potential bearing type(s) can actually provide the required capacities depending on actual bridge layout, and to evaluate further size and geometric requirements.
 
 The following steps summarize the process for identifying viable options:
 \begin{enumerate}[label=步骤 2.\arabic*,itemindent=4em]
