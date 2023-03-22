@@ -30,29 +30,22 @@
   \label{fig:crack-growth}
 \end{figure}
 
-This section presents only a brief and very general summary of the fatigue process, but it is important for the practicing engineer to understand the principles of the fatigue damage process in order to be proficient in fatigue design.
+% This section presents only a brief and very general summary of the fatigue process, but it is important for the practicing engineer to understand the principles of the fatigue damage process in order to be proficient in fatigue design.
+本节仅对疲劳过程进行了简要和非常笼统的总结，但对于实践工程师来说，了解疲劳损伤过程的原理对于精通疲劳设计非常重要。
 
-Minimizing fatigue cracks can be achieved by first avoiding the use of known details that have proven to have low resistance to fatigue. Fatigue cracks can also be reduced by the use of better fabrication and welding processes that lower inherent defects and also allocate for the detection and repair of such cracks before the bridge is opened to the public. In-service inspection is necessary to discover new fatigue cracks and monitor existing ones. Once cracks are located through the inspection process, it is necessary to perform an assessment to determine the risk of fracture. Furthermore, for the proper repair methods to be implemented, the cause and type of crack need to be determined \cite{fisher1998f}.
+% Minimizing fatigue cracks can be achieved by first avoiding the use of known details that have proven to have low resistance to fatigue. Fatigue cracks can also be reduced by the use of better fabrication and welding processes that lower inherent defects and also allocate for the detection and repair of such cracks before the bridge is opened to the public. In-service inspection is necessary to discover new fatigue cracks and monitor existing ones. Once cracks are located through the inspection process, it is necessary to perform an assessment to determine the risk of fracture. Furthermore, for the proper repair methods to be implemented, the cause and type of crack need to be determined \cite{fisher1998f}.
+避免使用已被证明抗疲劳性低的细部构造，可以最大程度地减少疲劳裂纹。疲劳裂缝也可以通过使用更好的制造和焊接工艺来减少，这些工艺可以减少固有缺陷，并且还可以在桥梁向公众开放之前检测和修复此类裂缝。在役检查对于发现新的疲劳裂纹和监测现有的疲劳裂纹是必要的。一旦通过检查过程找到裂纹，就需要进行评估以确定断裂的风险。 此外，为了实施正确的修复方法，需要确定裂纹的原因和类型 \cite{fisher1998f}。
 
 % Several methods exist for determining the fatigue resistance of a detail; these include: nominal stress approach, hot-spot stress approach, and fracture mechanics.
 有几种方法可用于确定细节的抗疲劳性； 其中包括：标称应力法、热点应力法和断裂力学。
 
-\subsection{Nominal Stress Approach}
-This design approach is a simple way to determine the fatigue resistance of a detail using equations for bending
-and axial loads to compute the nominal stress near a weld toe. Test data from full-scale fatigue tests are needed in
-order to utilize this design method. Stress ranges (S) versus the number of cycles to failure (N) curves are developed from the test data. The curves are also grouped into categories to aid in organizing the details according to their
-fatigue resistance. \cref{fig:s-n-curve} shows the S-N curves as used in AASHTO specifications. The detail categories reflect
-and account for the variations in the combined geometric and local notch stress concentrations. Each category has a
-constant-amplitude fatigue limit (CAFL), also referred to as threshold (CAFT). Stress ranges that fall below the
-CAFL are not expected to exhibit any fatigue failures during constant-amplitude test.
+% \subsection{Nominal Stress Approach}
+\subsection{标称应力法}
+% This design approach is a simple way to determine the fatigue resistance of a detail using equations for bending and axial loads to compute the nominal stress near a weld toe. Test data from full-scale fatigue tests are needed in order to utilize this design method. Stress ranges ($S$) versus the number of cycles to failure ($N$) curves are developed from the test data. The curves are also grouped into categories to aid in organizing the details according to their fatigue resistance. \cref{fig:s-n-curve} shows the $S$-$N$ curves as used in AASHTO specifications. The detail categories reflect and account for the variations in the combined geometric and local notch stress concentrations. Each category has a constant-amplitude fatigue limit (CAFL), also referred to as threshold (CAFT). Stress ranges that fall below the CAFL are not expected to exhibit any fatigue failures during constant-amplitude test.
+这种设计方法是一种确定细部构造抗疲劳性的简单方法，使用弯曲和轴向荷载公式来计算焊趾附近的标称应力。为了利用这种设计方法，需要来自全尺寸疲劳试验的试验数据。 应力范围（$S$）与失效循环次数（$N$）曲线是根据测试数据得出的。 这些曲线也被分组，以帮助根据它们的抗疲劳性组织细节。\cref{fig:s-n-curve} 显示了 \gls*{aashto} 规范中使用的 $S$-$N$ 曲线。 细部构造类别反映并说明组合的几何和局部缺口应力集中的变化。 每个类别都有一个\acrfull{cafl}，也称为\acrfull{caft}。 低于\acrlong*{cafl}的应力范围预计不会在等幅测试期间出现任何疲劳失效。
 
-Most bridges with a service life of 75 years are designed as having an infinite-life, no occurrence of fatigue
-cracking. In the AASHTO LRFD Bridge Design Specifications (LRFD Specifications), the fatigue design live load is
-taken as 0.75 times the HS20 for finite load-induced fatigue life and 1.5 times the HS20 for infinite load-induced
-fatigue life. This fatigue load is used to calculate the nominal stress ranges to be used with the S-N curves. If the
-resulting nominal stress range is less than half of the CAFL, it is assumed the bridge is designed for infinite life. This
-ensures that the fatigue limit-state stress range is below the CAFL. The fatigue limit-state is the stress range in which
-0.01 percent of the test data exceeds the CAFL. (AASHTO 2012)
+% Most bridges with a service life of 75 years are designed as having an infinite-life, no occurrence of fatigue cracking. In the AASHTO LRFD Bridge Design Specifications (LRFD Specifications), the fatigue design live load is taken as 0.75 times the HS20 for finite load-induced fatigue life and 1.5 times the HS20 for infinite load-induced fatigue life. This fatigue load is used to calculate the nominal stress ranges to be used with the S-N curves. If the resulting nominal stress range is less than half of the CAFL, it is assumed the bridge is designed for infinite life. This ensures that the fatigue limit-state stress range is below the CAFL. The fatigue limit-state is the stress range in which 0.01 percent of the test data exceeds the CAFL. \cite{aashto2012l}
+大多数使用寿命为 75 年的桥梁设计为无限寿命，不发生疲劳开裂。 在 \lrfd 中，疲劳设计活荷载取有限荷载引起的疲劳寿命 HS20 的 0.75 倍，无限荷载引起的疲劳寿命取HS20的1.5倍。 此疲劳载荷用于计算要与 $S$-$N$ 曲线一起使用的标称应力范围。 如果产生的标称应力范围小于\acrlong*{cafl}的一半，则假定桥梁设计为无限寿命。 这确保疲劳极限状态应力范围低于\acrlong*{cafl}。 疲劳极限状态是 0.01\% 的测试数据超过\acrlong*{cafl}的应力范围。\cite{aashto2012l}
 
 \begin{figure}
   % \includegraphics[width=\linewidth]{s-n-curve}
@@ -70,36 +63,32 @@ geometry of the tubes. Using this design process involves determining the stress
 parametric equations or finite element analysis. Disadvantages arise with the variability of different hot-spot
 definitions, varying baseline S-N curves, and difficulties with the CAFL.
 
-\subsection{Fracture Mechanics Approach}
-In the case of bridge structures, this is the most complex approach and tends to be difficult to implement during
-the bridge design process. The fracture mechanics approach is divided into two main categories: Linear Elastic
-Fracture Mechanics (LEFM) and Plastic Fracture Mechanics (PFM). LEFM is used when remotely applied stresses
-are in elastic ranges. It should be noted that at the crack tip, a stress singularity is always present and stresses tend to
-approach infinity. In the case of LEFM, the rate of crack growth is related to stress ranges, while in the case of PFM,
-rate of crack growth needs to be related to a parameter related to energy dissipation or plastic strain (Azizinamini and
-Radziminski 1989).
+% \subsection{Fracture Mechanics Approach}
+\subsection{断裂力学方法}
+% In the case of bridge structures, this is the most complex approach and tends to be difficult to implement during the bridge design process. The fracture mechanics approach is divided into two main categories: Linear Elastic Fracture Mechanics (LEFM) and Plastic Fracture Mechanics (PFM). LEFM is used when remotely applied stresses are in elastic ranges. It should be noted that at the crack tip, a stress singularity is always present and stresses tend to approach infinity. In the case of LEFM, the rate of crack growth is related to stress ranges, while in the case of PFM, rate of crack growth needs to be related to a parameter related to energy dissipation or plastic strain \cite{azizinamini1989s}.
+对于桥梁结构，这是最复杂的方法，在桥梁设计过程中往往难以实施。断裂力学方法分为两大类：\acrfull{lefm}和\acrfull{pfm}。 当远程施加的应力在弹性范围内时，使用\acrlong*{lefm}。应该注意的是，在裂纹尖端，应力奇异性始终存在并且应力趋于无穷大。在\acrlong*{lefm}的情况下，裂纹扩展速率与应力范围有关，而在\acrlong*{pfm}的情况下，裂纹扩展速率需要与能量耗散或塑性应变相关的参数相关。\cite{azizinamini1989s}
 
-For the case of LEFM, the Paris Law, shown in Equation 7.1, can be useful in determining the crack growth rate
-for many engineering applications.
+For the case of LEFM, the Paris Law, shown in Equation 7.1, can be useful in determining the crack growth rate for many engineering applications.
 
-\section{Crack Detection Techniques}
-Cracks are not always obvious to the human eye and can be difficult to locate at times. There are several
-methods in practice to aid in the detection of cracks, two of which are dye penetrant and magnetic particle inspection.
+% \section{Crack Detection Techniques}
+\section{裂纹检测技术}
+% Cracks are not always obvious to the human eye and can be difficult to locate at times. There are several methods in practice to aid in the detection of cracks, two of which are dye penetrant and magnetic particle inspection.
+裂纹对人眼来说并不总是很明显，有时很难定位。 在实践中有几种方法可以帮助检测裂纹，其中两种是染料渗透和磁粉探伤。
 
-Dye penetrant consists of three parts; cleaning the area of a suspected crack, application of a liquid dye, and
-finally the application of a white developer. Figure 7.3 shows a crack exposed using a red dye penetrant.
+% Dye penetrant consists of three parts; cleaning the area of a suspected crack, application of a liquid dye, and finally the application of a white developer. \cref{fig:crack-exposed} shows a crack exposed using a red dye penetrant.
+染料渗透剂由三部分组成； 清洁疑似裂缝的区域，使用液体染料，最后使用白色显影剂。 \cref{fig:crack-exposed} 显示了使用红色染料渗透剂暴露的裂纹。
 
 \begin{figure}
-  \includegraphics[width=0.5\linewidth]{crack-exposed.jpg}
+  \includegraphics[width=0.7\linewidth]{crack-exposed.jpg}
   \caption{Crack exposed using a red dye penetrant}
   \label{fig:crack-exposed}
 \end{figure}
 
-Magnetic particle inspection works by inducing a magnetic field using a handheld device around a crack. The
-magnetic field is disrupted at the crack and a concentration of a magnetic field results. A fine iron powder is
-sprinkled over the area of interest and is attracted to the magnetic field, exposing the crack.
+% Magnetic particle inspection works by inducing a magnetic field using a handheld device around a crack. The magnetic field is disrupted at the crack and a concentration of a magnetic field results. A fine iron powder is sprinkled over the area of interest and is attracted to the magnetic field, exposing the crack.
+磁粉检测的工作原理是使用手持设备在裂纹周围感应磁场。磁场在裂纹处被破坏，导致磁场集中。将细铁粉撒在感兴趣的区域上并被磁场吸引，从而暴露裂缝。
 
-\section{Repair and Retrofit Methods}
+% \section{Repair and Retrofit Methods}
+\section{维修和改造方法}
 This section presents several methods for the repair and retrofit of fatigue critical details. Such techniques can be
 categorized as surface treatments, repair of through-thickness cracks, and connection or global structure modification
 to reduce the causes of cracking.
@@ -271,7 +260,7 @@ The all-welded retrofit for connection plates can be difficult to implement. For
 itself can cause fatigue cracks. (Keating et al. 1996) In addition, it can be very difficult to properly weld high
 strength steels as well as flanges that are embedded in concrete. Although AASHTO now requires transverse welds
 or bolted connections on both the girder flanges for the positive attachment of the connection plate, the all-welded
-attachment retrofit has rarely been specified for reasons previously mentioned. (AASHTO 2012) Figure 7.9 shows a
+attachment retrofit has rarely been specified for reasons previously mentioned. \cite{aashto2012l} \cref{fig:plate-to-girder-fillet-weld} shows a
 fillet welded connection plate to girder detail.
 
 \begin{figure}
