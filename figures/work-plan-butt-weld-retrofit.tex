@@ -1,0 +1,75 @@
+\documentclass{standalone}
+\usepackage{tikz,ctex,amssymb,amsmath}
+\setCJKmainfont[BoldFont={NotoSerifCJKsc-SemiBold.otf}]{NotoSerifCJKsc-Light.otf}
+\usetikzlibrary{positioning,shapes.geometric,shapes.misc,shapes.symbols,shapes.arrows,patterns,patterns.meta}
+\tikzdeclarepattern{
+  name=steel,
+  parameters={
+    \pgfkeysvalueof{/pgf/pattern keys/size},
+    \pgfkeysvalueof{/pgf/pattern keys/angle},
+    \pgfkeysvalueof{/pgf/pattern keys/line width},
+  },
+  bounding box={
+    (0,-0.5*\pgfkeysvalueof{/pgf/pattern keys/size}) and
+    (\pgfkeysvalueof{/pgf/pattern keys/size},
+    0.5*\pgfkeysvalueof{/pgf/pattern keys/size})},
+  tile size={(\pgfkeysvalueof{/pgf/pattern keys/size},
+    \pgfkeysvalueof{/pgf/pattern keys/size})},
+  tile transformation={rotate=\pgfkeysvalueof{/pgf/pattern keys/angle}},
+  defaults={
+    size/.initial=5pt,
+    angle/.initial=45,
+    line width/.initial=.2pt,
+  },
+  code={
+    \draw [line width=\pgfkeysvalueof{/pgf/pattern keys/line width}]
+      (0,0) -- (\pgfkeysvalueof{/pgf/pattern keys/size},0)
+      (0,0.3*\pgfkeysvalueof{/pgf/pattern keys/size}) -- (\pgfkeysvalueof{/pgf/pattern keys/size},0.3*\pgfkeysvalueof{/pgf/pattern keys/size});
+  },
+}
+
+\tikzdeclarepattern{
+  name=weld,
+  parameters={
+    \pgfkeysvalueof{/pgf/pattern keys/size},
+    \pgfkeysvalueof{/pgf/pattern keys/angle},
+    \pgfkeysvalueof{/pgf/pattern keys/line width},
+    \pgfkeysvalueof{/pgf/pattern keys/yshift},
+  },
+  bounding box={
+    (0,0) and
+    (\pgfkeysvalueof{/pgf/pattern keys/size},
+    \pgfkeysvalueof{/pgf/pattern keys/size})},
+  tile size={(\pgfkeysvalueof{/pgf/pattern keys/size},
+    \pgfkeysvalueof{/pgf/pattern keys/size})},
+  tile transformation={rotate=\pgfkeysvalueof{/pgf/pattern keys/angle}},
+  defaults={
+    size/.initial=5pt,
+    angle/.initial=0,
+    line width/.initial=.4pt,
+    yshift/.initial=0pt,
+  },
+  code={
+    \draw [line width=\pgfkeysvalueof{/pgf/pattern keys/line width}]
+    % (0,0) arc(180:90:0.4*\pgfkeysvalueof{/pgf/pattern keys/size})
+    (0.5*\pgfkeysvalueof{/pgf/pattern keys/size},0.05*\pgfkeysvalueof{/pgf/pattern keys/size}) arc(-90:90:0.45*\pgfkeysvalueof{/pgf/pattern keys/size});
+    % (\pgfkeysvalueof{/pgf/pattern keys/size},0) arc(0:-90:0.5*\pgfkeysvalueof{/pgf/pattern keys/size});
+  },
+}
+
+\begin{document}\footnotesize
+  \begin{tikzpicture}[>=stealth]
+    \foreach \x in {6.5,-6.5} 
+      { \draw[thin] (\x, -0.2)--++(0,1.5)--++(30:0.2)--++(150:0.4)--++(30:0.2)--++(0,1.5);}
+    \foreach \x in {3,2.7,2.5,0} {\draw(-6.5,\x)--++(13,0);}
+    \fill[pattern=steel](-6.5,3)rectangle(6.5,2.7);
+    \fill[pattern={weld[size=4pt,yshift=5pt]}](-6.5,2.7)rectangle(6.5,2.5);
+    \fill[pattern={weld[size=5pt,angle=90]}](-0.1,2.2)rectangle(0.1,0);
+    \draw(-0.1,2.2)--(-0.1,0)(0.1,2.2)--(0.1,0);
+    \filldraw[white,draw=black](0,2.0)circle(0.7);
+    \draw[thin,<-](-3,2.8)--++(120:0.5)--++(-0.2,0)node [left]{主梁腹板};
+    \draw[thin,<-](0,0.2)--++(-60:0.5)--++(0.2,0)node [right]{对接焊};
+    \draw[thin,<-](0,2.7)--++(-60:1.5)--++(0.2,0)node [right]{\parbox{8em}{靠近主梁腹板的开孔，手工磨削精加工与主梁腹板相切}};
+    \node at (6,0)[above left]{纵向加劲肋};
+  \end{tikzpicture}
+\end{document}
